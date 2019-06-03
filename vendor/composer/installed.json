@@ -1,0 +1,87 @@
+[
+    {
+        "name": "mnsami/composer-custom-directory-installer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mnsami/composer-custom-directory-installer.git",
+            "reference": "1ccaf2da421dd9f6bcec4631c38e69e67677125f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mnsami/composer-custom-directory-installer/zipball/1ccaf2da421dd9f6bcec4631c38e69e67677125f",
+            "reference": "1ccaf2da421dd9f6bcec4631c38e69e67677125f",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0",
+            "php": ">=5.3"
+        },
+        "time": "2017-08-14T19:50:19+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": [
+                "Composer\\CustomDirectoryInstaller\\LibraryPlugin",
+                "Composer\\CustomDirectoryInstaller\\PearPlugin",
+                "Composer\\CustomDirectoryInstaller\\PluginPlugin"
+            ],
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Composer\\CustomDirectoryInstaller": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mina Nabil Sami",
+                "email": "mina.nsami@gmail.com"
+            }
+        ],
+        "description": "A composer plugin, to help install packages of different types in custom paths.",
+        "keywords": [
+            "composer",
+            "composer-installer",
+            "composer-plugin"
+        ]
+    },
+    {
+        "name": "neoan3-apps/ops",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sroehrl/neoan3-ops.git",
+            "reference": "9dc3b042aea5f750919f93c6723aad50876c9154"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/9dc3b042aea5f750919f93c6723aad50876c9154",
+            "reference": "9dc3b042aea5f750919f93c6723aad50876c9154",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "ext-openssl": "*"
+        },
+        "time": "2019-05-30T23:11:03+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Neoan3\\Apps\\": "./"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "neoan3 common string operations helper class"
+    }
+]
