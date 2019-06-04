@@ -11,12 +11,20 @@ class ComposerStaticInitccabbd23014f4245994a38bf0b494038
         array (
             'Neoan3\\Apps\\' => 12,
         ),
+        'L' => 
+        array (
+            'Leafo\\ScssPhp\\' => 14,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Neoan3\\Apps\\' => 
         array (
             0 => __DIR__ . '/..' . '/neoan3-apps/ops',
+        ),
+        'Leafo\\ScssPhp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/leafo/scssphp/src',
         ),
     );
 

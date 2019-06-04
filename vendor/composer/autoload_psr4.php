@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Neoan3\\Apps\\' => array($vendorDir . '/neoan3-apps/ops'),
+    'Leafo\\ScssPhp\\' => array($vendorDir . '/leafo/scssphp/src'),
 );

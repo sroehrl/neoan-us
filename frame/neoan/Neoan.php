@@ -3,15 +3,27 @@
 
 namespace Neoan3\Frame;
 
+use Neoan3\Apps\Ops;
 use Neoan3\Core\Serve;
+use Leafo\ScssPhp\Compiler;
+use Leafo\ScssPhp\Server;
 
 class Neoan extends Serve {
+    private $developmentMode = false;
     function __construct() {
 
         parent::__construct();
         $this->includeElement('header');
         $this->hook('header','header');
         $this->hook('footer','footer');
+
+        if($this->developmentMode){
+            $scss = new Compiler();
+
+            $scss->addImportPath(path.'/frame/neoan');
+            $scss->setLineNumberStyle(Compiler::LINE_COMMENTS);
+            $this->style .= $scss->compile('@import "main";');
+        }
     }
 
     function constants() {
@@ -28,9 +40,11 @@ class Neoan extends Serve {
             'meta'=>[
                 ['name'=>'viewport','content'=>'width=device-width, initial-scale=1']
             ],
+            'js'=>[
+                ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js']
+            ],
             'stylesheet'=>[
-                ''.base.'node_modules/bulma/css/bulma.min.css',
-                ''.base.'frame/neoan/style.css',
+                ''.base.'frame/neoan/main.css'
             ]
         ];
     }
