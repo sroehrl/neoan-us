@@ -4,6 +4,7 @@
 namespace Neoan3\Frame;
 
 use Neoan3\Apps\Ops;
+use Neoan3\Components\Cache;
 use Neoan3\Core\Serve;
 use Leafo\ScssPhp\Compiler;
 use Leafo\ScssPhp\Server;
@@ -11,8 +12,10 @@ use Leafo\ScssPhp\Server;
 class Neoan extends Serve {
     private $developmentMode = false;
     function __construct() {
-
+//        Cache::setCaching('+2 hours');
+//        Cache::invalidate('demo');
         parent::__construct();
+
         $this->includeElement('header');
         $this->hook('header','header');
         $this->hook('footer','footer');
@@ -24,6 +27,10 @@ class Neoan extends Serve {
             $scss->setLineNumberStyle(Compiler::LINE_COMMENTS);
             $this->style .= $scss->compile('@import "main";');
         }
+    }
+    function output($params = []) {
+        parent::output($params);
+        Cache::write();
     }
 
     function constants() {
@@ -41,7 +48,8 @@ class Neoan extends Serve {
                 ['name'=>'viewport','content'=>'width=device-width, initial-scale=1']
             ],
             'js'=>[
-                ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js']
+                ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
+                ['src'=> base.'node_modules/vue/dist/vue.min.js'],
             ],
             'stylesheet'=>[
                 ''.base.'frame/neoan/main.css'
