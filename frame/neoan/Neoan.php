@@ -50,6 +50,7 @@ class Neoan extends Serve {
             'js'=>[
                 ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
                 ['src'=> base.'node_modules/vue/dist/vue.min.js'],
+                ['src'=> base.'node_modules/axios/dist/axios.min.js'],
             ],
             'stylesheet'=>[
                 ''.base.'frame/neoan/main.css'

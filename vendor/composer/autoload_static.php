@@ -15,16 +15,26 @@ class ComposerStaticInitccabbd23014f4245994a38bf0b494038
         array (
             'Leafo\\ScssPhp\\' => 14,
         ),
+        'F' => 
+        array (
+            'Firebase\\JWT\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Neoan3\\Apps\\' => 
         array (
-            0 => __DIR__ . '/..' . '/neoan3-apps/ops',
+            0 => __DIR__ . '/..' . '/neoan3-apps/jwt',
+            1 => __DIR__ . '/..' . '/neoan3-apps/ops',
+            2 => __DIR__ . '/..' . '/neoan3-apps/stateless',
         ),
         'Leafo\\ScssPhp\\' => 
         array (
             0 => __DIR__ . '/..' . '/leafo/scssphp/src',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
     );
 

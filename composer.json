@@ -7,7 +7,8 @@
         "ext-json": "*",
         "mnsami/composer-custom-directory-installer": "1.1.*",
         "neoan3-apps/ops": "dev-master",
-        "leafo/scssphp": "dev-master"
+        "leafo/scssphp": "dev-master",
+        "neoan3-apps/stateless": "dev-master"
     },
     "license": "MIT",
     "authors": [
@@ -18,9 +19,10 @@
     ],
     "extra": {
         "installer-paths": {
-            "./frame/{$name}":[],
-            "./model/{$name}":[],
-            "./component/{$name}":[]
+            "./frame/{$name}": [],
+            "./model/{$name}": [
+            ],
+            "./component/{$name}": []
         }
     }
 }
