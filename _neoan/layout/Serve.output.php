@@ -5,7 +5,9 @@ use Neoan3\Apps\Ops;
 
 /**
  * Class Serve
+ *
  * @package Neoan3\Core
+ *
  */
 class Serve {
     /**
@@ -357,7 +359,7 @@ class Serve {
             if(strlen($getString)>0){
                 $getString = '?'.$getString;
             }
-            $this->modules .= '<script type="module" src="'.base.'/serve.file/'.$pName.'/ce'.$getString.'"></script>';
+            $this->modules .= '<script type="module" defer src="'.base.'/serve.file/'.$pName.'/ce'.$getString.'"></script>';
         }
 
         return $this;

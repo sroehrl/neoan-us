@@ -1,4 +1,4 @@
-<form >
+<form id="register-form">
     <div class="field">
         <label for="username" class="label">Username</label>
         <input type="text" class="input" id="username" v-model="username">
@@ -7,7 +7,17 @@
         <label for="ped" class="label">Password</label>
         <input type="password" class="input" id="ped" v-model="password">
     </div>
-    <div>
-        <button type="button" class="button is-primary" v-on:click="register()">Register</button>
+    <div class="columns">
+        <div class="column">
+            <label class="checkbox">
+                <input type="checkbox" v-model="acceptTAC">
+                I agree to the <a href="#">terms and conditions</a>
+            </label>
+        </div>
+        <div class="column is-narrow">
+            <button type="button" class="button is-primary" v-on:click="register()">Register</button>
+        </div>
+
     </div>
+
 </form>

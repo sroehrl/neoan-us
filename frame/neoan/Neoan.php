@@ -30,6 +30,20 @@ class Neoan extends Serve {
             $this->style .= $scss->compile('@import "main";');
         }
     }
+    function vueComponent($element,$params=[]){
+
+        $path = path.'/component/'.$element.'/'.$element.'.ce.';
+        if(file_exists($path.$this->viewExt)){
+            $this->footer .= '<template id="'.$element.'">'.
+                             $this->fileContent($path.$this->viewExt,$params).
+                             '</template>';
+        }
+        if(file_exists($path.'js')){
+            $this->js .= file_get_contents($path.'js');
+        }
+
+        return $this;
+    }
     function includeElement($element, $params = []) {
         $params['vue'] = base . 'node_modules/vue/dist/vue.esm.browser.js';
         return parent::includeElement($element, $params);

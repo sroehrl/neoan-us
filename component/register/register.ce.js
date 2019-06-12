@@ -1,25 +1,24 @@
-import Vue from '{{vue}}';
+let $storage = window.localStorage;
 
-Vue.component('registration-form', {
+const registerForm = {
+    name: 'register-form',
     data:()=>{
         return {
             username:'',
-            password:''
+            password:'',
+            acceptTAC:false,
+            loggedIn:$storage.token
         }
     },
+    created(){
+        console.log($storage);
+    },
+
     methods:{
         register(){
 
-            console.log(this.password);
+            console.log(this);
         }
     },
     template:document.querySelector('#register').innerHTML
-});
-
-new Vue({
-    el: '#registration',
-    data:{
-        username:'choose',
-        password:''
-    }
-});
+};

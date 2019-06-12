@@ -1,0 +1,27 @@
+<section class="main section">
+    <form action="{{base}}new-post/save">
+        <div class="container" id="posting">
+            <div class="columns">
+                <div class="column">
+                    <textarea id="new-post-editor"></textarea>
+                </div>
+                <div class="column is-one-third">
+                    <div class="select">
+                        <select required v-model="category">
+                            <option v-for="category in categories" v-bind:value="category.name">{{category.name}}</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="keywords" class="label">Keywords</label>
+                        <input type="text" class="input" id="keywords">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </form>
+
+</section>

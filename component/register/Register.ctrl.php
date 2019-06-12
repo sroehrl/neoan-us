@@ -4,13 +4,26 @@
 namespace Neoan3\Components;
 
 use Neoan3\Core\Unicore;
+use Neoan3\Frame\Neoan;
 
 class Register extends Unicore {
+    private $vueElements = ['register'];
     function init() {
+
         $this->uni('neoan')
-             ->includeElement('register')
+             ->callback($this,'vueComponents')
              ->hook('main', 'register')
              ->output();
+    }
+
+    /**
+     * @param Neoan $uni
+     */
+    function vueComponents($uni){
+        foreach($this->vueElements as $vueElement){
+            $uni->vueComponent($vueElement);
+        }
+
     }
 
 
