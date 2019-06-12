@@ -1,0 +1,13 @@
+<form >
+    <div class="field">
+        <label for="username" class="label">Username</label>
+        <input type="text" class="input" id="username" v-model="username">
+    </div>
+    <div class="field">
+        <label for="ped" class="label">Password</label>
+        <input type="password" class="input" id="ped" v-model="password">
+    </div>
+    <div>
+        <button type="button" class="button is-primary" v-on:click="register()">Register</button>
+    </div>
+</form>

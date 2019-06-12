@@ -3,8 +3,9 @@
 
 namespace Neoan3\Frame;
 
+use Neoan3\Apps\Db;
 use Neoan3\Apps\Ops;
-use Neoan3\Components\Cache;
+use Neoan3\Apps\Cache;
 use Neoan3\Core\Serve;
 use Leafo\ScssPhp\Compiler;
 use Leafo\ScssPhp\Server;
@@ -16,6 +17,7 @@ class Neoan extends Serve {
 //        Cache::invalidate('demo');
         parent::__construct();
 
+        Db::setEnvironment(['name'=>'neoan_us','assumes_uuid'=>true]);
         $this->includeElement('header');
         $this->hook('header','header');
         $this->hook('footer','footer');

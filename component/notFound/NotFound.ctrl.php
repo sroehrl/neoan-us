@@ -10,7 +10,7 @@ class NotFound extends Unicore {
      * Constructor
      */
     function init(){
-        $this->uni()->hook('main','notFound')->output();
+        $this->uni('neoan')->hook('main','notFound')->output();
     }
 
 

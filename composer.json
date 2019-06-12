@@ -8,7 +8,9 @@
         "mnsami/composer-custom-directory-installer": "1.1.*",
         "neoan3-apps/ops": "dev-master",
         "leafo/scssphp": "dev-master",
-        "neoan3-apps/stateless": "dev-master"
+        "neoan3-apps/stateless": "dev-master",
+        "neoan3-apps/cache": "dev-master",
+        "neoan3-model/user": "dev-master"
     },
     "license": "MIT",
     "authors": [
@@ -21,8 +23,15 @@
         "installer-paths": {
             "./frame/{$name}": [],
             "./model/{$name}": [
+                "neoan3-model/user"
             ],
             "./component/{$name}": []
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sroehrl/neoan3-userModel.git"
+        }
+    ]
 }
