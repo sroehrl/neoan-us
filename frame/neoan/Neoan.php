@@ -30,6 +30,11 @@ class Neoan extends Serve {
             $this->style .= $scss->compile('@import "main";');
         }
     }
+    function includeElement($element, $params = []) {
+        $params['vue'] = base . 'node_modules/vue/dist/vue.esm.browser.js';
+        return parent::includeElement($element, $params);
+    }
+
     function output($params = []) {
         parent::output($params);
         Cache::write();

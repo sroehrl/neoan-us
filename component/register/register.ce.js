@@ -1,4 +1,4 @@
-import Vue from '{{base}}node_modules/vue/dist/vue.esm.browser.js';
+import Vue from '{{vue}}';
 
 Vue.component('registration-form', {
     data:()=>{
