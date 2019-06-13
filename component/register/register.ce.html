@@ -1,23 +1,35 @@
-<form id="register-form">
-    <div class="field">
-        <label for="username" class="label">Username</label>
-        <input type="text" class="input" id="username" v-model="username">
+<form id="register-form" v-on:submit.prevent="register">
+    <div v-if="loggedIn">
+        <h2>You are logged in.</h2>
+        <button type="button" class="button" v-on:click="logout">sign out</button>
     </div>
-    <div class="field">
-        <label for="ped" class="label">Password</label>
-        <input type="password" class="input" id="ped" v-model="password">
-    </div>
-    <div class="columns">
-        <div class="column">
-            <label class="checkbox">
-                <input type="checkbox" v-model="acceptTAC">
-                I agree to the <a href="#">terms and conditions</a>
-            </label>
+    <div v-else>
+        <div class="field">
+            <label for="username" class="label">Username</label>
+            <input type="text" class="input" v-bind:class="{'is-warning':duplicate}" id="username" required v-model="username">
         </div>
-        <div class="column is-narrow">
-            <button type="button" class="button is-primary" v-on:click="register()">Register</button>
+        <article class="message is-danger" v-if="duplicate">
+            <div class="message-body">
+                Username is taken
+            </div>
+        </article>
+        <div class="field">
+            <label for="ped" class="label">Password</label>
+            <input type="password" class="input" id="ped" required minlength="8" v-model="password">
         </div>
+        <div class="columns">
+            <div class="column">
+                <label class="checkbox">
+                    <input type="checkbox" v-model="acceptTAC" required>
+                    I agree to the <a href="#">terms and conditions</a>
+                </label>
+            </div>
+            <div class="column is-narrow">
+                <button type="submit" class="button is-primary" >Register</button>
+            </div>
 
+        </div>
     </div>
+
 
 </form>

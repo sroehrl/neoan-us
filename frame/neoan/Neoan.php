@@ -4,34 +4,33 @@
 namespace Neoan3\Frame;
 
 use Neoan3\Apps\Db;
-use Neoan3\Apps\Ops;
 use Neoan3\Apps\Cache;
+use Neoan3\Apps\DbException;
+use Neoan3\Apps\Stateless;
 use Neoan3\Core\Serve;
-use Leafo\ScssPhp\Compiler;
-use Leafo\ScssPhp\Server;
 
 class Neoan extends Serve {
-    private $developmentMode = false;
+    private $developmentMode = true;
     function __construct() {
-//        Cache::setCaching('+2 hours');
-//        Cache::invalidate('demo');
+        if(!$this->developmentMode){
+            Cache::setCaching('+2 hours');
+        }
+        try{
+            Db::setEnvironment(['name'=>'neoan_us','assumes_uuid'=>true]);
+        } catch (DbException $e){
+            echo "Warning: Database connection failed.";
+        }
+        Stateless::setSecret('NiemalsGenugGeld');
+
         parent::__construct();
 
-        Db::setEnvironment(['name'=>'neoan_us','assumes_uuid'=>true]);
+
         $this->includeElement('header');
         $this->hook('header','header');
         $this->hook('footer','footer');
 
-        if($this->developmentMode){
-            $scss = new Compiler();
-
-            $scss->addImportPath(path.'/frame/neoan');
-            $scss->setLineNumberStyle(Compiler::LINE_COMMENTS);
-            $this->style .= $scss->compile('@import "main";');
-        }
     }
     function vueComponent($element,$params=[]){
-
         $path = path.'/component/'.$element.'/'.$element.'.ce.';
         if(file_exists($path.$this->viewExt)){
             $this->footer .= '<template id="'.$element.'">'.
@@ -44,14 +43,12 @@ class Neoan extends Serve {
 
         return $this;
     }
-    function includeElement($element, $params = []) {
-        $params['vue'] = base . 'node_modules/vue/dist/vue.esm.browser.js';
-        return parent::includeElement($element, $params);
-    }
 
     function output($params = []) {
         parent::output($params);
-        Cache::write();
+        if(!$this->developmentMode){
+            Cache::write();
+        }
     }
 
     function constants() {
@@ -70,8 +67,9 @@ class Neoan extends Serve {
             ],
             'js'=>[
                 ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
-                ['src'=> base.'node_modules/vue/dist/vue.min.js'],
+                ['src'=> base.'node_modules/vue/dist/vue.js'],
                 ['src'=> base.'node_modules/axios/dist/axios.min.js'],
+                ['src'=> path.'/frame/neoan/axios-wrapper.js','data'=>['base'=>base]],
             ],
             'stylesheet'=>[
                 ''.base.'frame/neoan/main.css'

@@ -3,11 +3,18 @@
 
 namespace Neoan3\Components;
 
+use Neoan3\Apps\Db;
+use Neoan3\Apps\Stateless;
+use Neoan3\Core\RouteException;
 use Neoan3\Core\Unicore;
 use Neoan3\Frame\Neoan;
 
 class Register extends Unicore {
     private $vueElements = ['register'];
+    function __construct() {
+        new Neoan();
+    }
+
     function init() {
 
         $this->uni('neoan')
@@ -25,6 +32,27 @@ class Register extends Unicore {
         }
 
     }
-
+    function getRegister(){
+        $jwt = Stateless::validate();
+        return $jwt;
+    }
+    function postRegister($credentials){
+        // check uniqueness
+        $exists = Db::easy('user.user_name',['user_name'=>trim($credentials['username'])]);
+        if(!empty($exists)){
+            throw new RouteException('Duplicate entry',400);
+        }
+        $uId = Db::uuid()->uuid;
+        Db::ask('user',[
+            'user_name'=>trim($credentials['username']),
+            'id'=>'$'.$uId
+        ]);
+        Db::ask('user_password',[
+            'user_id'=>'$'.$uId,
+            'password'=>password_hash($credentials['password'], PASSWORD_DEFAULT)
+        ]);
+        $jwt = Stateless::assign($uId,'user',['exp'=>time()+(2*60*60*1000)]);
+        return ['token'=>$jwt];
+    }
 
 }

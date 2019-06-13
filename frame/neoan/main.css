@@ -1,6 +1,6 @@
 @charset "UTF-8";
-template {
-  display: none;
+html {
+  min-height: 100%;
 }
 
 body {

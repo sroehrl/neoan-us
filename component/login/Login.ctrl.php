@@ -4,14 +4,12 @@
 namespace Neoan3\Components;
 
 use Neoan3\Frame\Neoan;
+use Neoan3\Model\UserModel;
 
 class Login extends Neoan {
-    function getLogin($obj){
-        
-    }
 
-    function postLogin($obj){
-        
+    function postLogin($credentials){
+        $user = UserModel::find(['user_name'=>$credentials['username']]);
     }
 
 }
