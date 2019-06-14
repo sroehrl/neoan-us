@@ -3,13 +3,42 @@
 
 namespace Neoan3\Components;
 
+use Neoan3\Apps\Db;
+use Neoan3\Apps\Stateless;
+use Neoan3\Core\RouteException;
 use Neoan3\Frame\Neoan;
 use Neoan3\Model\UserModel;
 
+/**
+ * Class Login
+ *
+ * @package Neoan3\Components
+ */
 class Login extends Neoan {
 
-    function postLogin($credentials){
-        $user = UserModel::find(['user_name'=>$credentials['username']]);
+    /**
+     * @param $credentials
+     *
+     * @return array
+     * @throws RouteException
+     * @throws \Neoan3\Apps\DbException
+     */
+    function postLogin($credentials) {
+        $user = UserModel::find(['user.user_name' => $credentials['username']]);
+
+        if(empty($user)) {
+            throw new RouteException('Wrong credentials', 401);
+        }
+
+        $password = Db::easy(
+            'user_password.password',
+            ['^delete_date', 'user_id' => '$' . $user[0]['id']]
+        );
+        if(empty($password) || !password_verify($credentials['password'],$password[0]['password'])){
+            throw new RouteException('Wrong credentials', 401);
+        }
+        $jwt = Stateless::assign($user[0]['id'],'user',['exp'=>time()+(2*60*60*1000)]);
+        return ['token'=>$jwt,'user'=>$user[0]];
     }
 
 }

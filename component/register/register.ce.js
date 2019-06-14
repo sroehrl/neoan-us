@@ -5,6 +5,7 @@ const registerForm = {
         return {
             username:'',
             password:'',
+            email:'',
             acceptTAC:false,
             duplicate:false,
             loggedIn:localStorage.token
@@ -15,6 +16,9 @@ const registerForm = {
             // check if still valid token
             api.get('register').then(x=>{
                 console.log(x.data);
+            }).catch(e=>{
+                console.log(e);
+                this.logout();
             })
         }
     },

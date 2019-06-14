@@ -11,6 +11,7 @@ use Neoan3\Core\Serve;
 
 class Neoan extends Serve {
     private $developmentMode = true;
+    protected $currentAuth = false;
     function __construct() {
         if(!$this->developmentMode){
             Cache::setCaching('+2 hours');
@@ -31,6 +32,7 @@ class Neoan extends Serve {
 
     }
     function vueComponent($element,$params=[]){
+        $params['base'] = base;
         $path = path.'/component/'.$element.'/'.$element.'.ce.';
         if(file_exists($path.$this->viewExt)){
             $this->footer .= '<template id="'.$element.'">'.
@@ -38,9 +40,13 @@ class Neoan extends Serve {
                              '</template>';
         }
         if(file_exists($path.'js')){
-            $this->js .= file_get_contents($path.'js');
+            $this->js .= $this->fileContent($path.'js',$params);
         }
 
+        return $this;
+    }
+    function restrict($scope){
+        $this->currentAuth =Stateless::restrict($scope);
         return $this;
     }
 
@@ -69,6 +75,7 @@ class Neoan extends Serve {
                 ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
                 ['src'=> base.'node_modules/vue/dist/vue.js'],
                 ['src'=> base.'node_modules/axios/dist/axios.min.js'],
+                ['src'=> base.'node_modules/lodash/lodash.min.js'],
                 ['src'=> path.'/frame/neoan/axios-wrapper.js','data'=>['base'=>base]],
             ],
             'stylesheet'=>[

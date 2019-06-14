@@ -4,10 +4,23 @@
 namespace Neoan3\Components;
 
 use Neoan3\Core\Unicore;
+use Neoan3\Frame\Neoan;
 
 class Article extends Unicore {
-    function init(){
-        $this->uni('neoan')->hook('main','article')->output();
+    private $vueElements = ['login'];
+    function init() {
+        $this->uni('neoan')->callback($this,'vueElements')
+             ->hook('main', 'article')
+             ->output();
+    }
+    /**
+     * @param Neoan $uni
+     */
+    function vueElements($uni){
+        foreach($this->vueElements as $vueElement){
+            $uni->vueComponent($vueElement);
+        }
+
     }
 
 }

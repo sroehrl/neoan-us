@@ -4,18 +4,23 @@
         <button type="button" class="button" v-on:click="logout">sign out</button>
     </div>
     <div v-else>
+        <article class="message is-danger" v-if="duplicate">
+            <div class="message-body">
+                Username or Email is taken
+            </div>
+        </article>
         <div class="field">
             <label for="username" class="label">Username</label>
             <input type="text" class="input" v-bind:class="{'is-warning':duplicate}" id="username" required v-model="username">
         </div>
-        <article class="message is-danger" v-if="duplicate">
-            <div class="message-body">
-                Username is taken
-            </div>
-        </article>
+
         <div class="field">
             <label for="ped" class="label">Password</label>
             <input type="password" class="input" id="ped" required minlength="8" v-model="password">
+        </div>
+        <div class="field">
+            <label for="email" class="label">Email</label>
+            <input type="email" class="input" id="email" v-bind:class="{'is-warning':duplicate}" required minlength="8" v-model="email">
         </div>
         <div class="columns">
             <div class="column">

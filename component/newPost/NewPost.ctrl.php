@@ -3,6 +3,7 @@
 
 namespace Neoan3\Components;
 
+use Neoan3\Apps\Stateless;
 use Neoan3\Core\Unicore;
 
 
@@ -11,6 +12,9 @@ class NewPost extends Unicore {
         $this->uni('neoan')->includeJs('asset/tinymce/js/tinymce/tinymce.min.js')
              ->hook('main', 'newPost')
              ->output();
+    }
+    function postNewPost($obj){
+        return $obj;
     }
 
 }

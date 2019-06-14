@@ -4,10 +4,12 @@
 namespace Neoan3\Components;
 
 use Neoan3\Apps\Db;
+use Neoan3\Apps\DbException;
 use Neoan3\Apps\Stateless;
 use Neoan3\Core\RouteException;
 use Neoan3\Core\Unicore;
 use Neoan3\Frame\Neoan;
+use Neoan3\Model\UserModel;
 
 class Register extends Unicore {
     private $vueElements = ['register'];
@@ -35,13 +37,18 @@ class Register extends Unicore {
     function getRegister(){
         $jwt = Stateless::validate();
         return $jwt;
+
     }
     function postRegister($credentials){
+
         // check uniqueness
-        $exists = Db::easy('user.user_name',['user_name'=>trim($credentials['username'])]);
-        if(!empty($exists)){
+        $userNameExists = UserModel::find(['user_name'=>trim($credentials['username'])]);
+        $emailExists = UserModel::find(['user_name'=>trim($credentials['email'])]);
+        if(!empty($userNameExists) || !empty($emailExists)){
             throw new RouteException('Duplicate entry',400);
         }
+
+
         $uId = Db::uuid()->uuid;
         Db::ask('user',[
             'user_name'=>trim($credentials['username']),
@@ -49,7 +56,11 @@ class Register extends Unicore {
         ]);
         Db::ask('user_password',[
             'user_id'=>'$'.$uId,
-            'password'=>password_hash($credentials['password'], PASSWORD_DEFAULT)
+            'password'=>'='.password_hash($credentials['password'], PASSWORD_DEFAULT)
+        ]);
+        Db::ask('user_email',[
+            'user_id'=>'$'.$uId,
+            'email'=>trim($credentials['email'])
         ]);
         $jwt = Stateless::assign($uId,'user',['exp'=>time()+(2*60*60*1000)]);
         return ['token'=>$jwt];
