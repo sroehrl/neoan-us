@@ -2,7 +2,7 @@ new Vue({
     el:'#header',
     data:{
         text:'',
-        tests:[1,2,3,4,5]
+        searchResults:[]
     },
     watch:{
         text: function (newV,oldV) {
@@ -15,7 +15,7 @@ new Vue({
     methods:{
         ajaxSearch:function(){
             api.get('search?q='+this.text).then(res=>{
-                console.log(res.data);
+                this.searchResults = res.data;
             })
         }
     }

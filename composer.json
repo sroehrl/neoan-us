@@ -10,7 +10,9 @@
         "leafo/scssphp": "dev-master",
         "neoan3-apps/stateless": "dev-master",
         "neoan3-apps/cache": "dev-master",
-        "neoan3-model/user": "dev-master"
+        "neoan3-model/user": "dev-master",
+        "neoan3-apps/session": "dev-master",
+        "neoan3-apps/db": "dev-master"
     },
     "license": "MIT",
     "authors": [

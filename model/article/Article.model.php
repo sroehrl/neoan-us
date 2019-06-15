@@ -8,11 +8,24 @@ use Neoan3\Apps\Db;
 
 class ArticleModel extends IndexModel {
     static function byId($id){
-        $tables = [];
-        $article = Db::easy('article.* #article.insert_date:inserted',['id'=>'$'.$id]);
-        foreach($tables as $table){
-            $article[$table] = Db::easy($table.'.*',['article_id'=>'$'.$id,'^delete_date']);
+        $tables = ['content'];
+        $article = parent::first(Db::easy('article.* #article.insert_date:inserted',['id'=>'$'.$id]));
+        if(!empty($article)){
+            $article['author'] = parent::first(Db::easy('user.*',['id'=>'$'.$article['author_user_id']]));
+            $article['category'] = parent::first(Db::easy('category.*',['id'=>'$'.$article['category_id']]));
+            foreach($tables as $table){
+                $article[$table] = Db::easy('article_'.$table.'.*',['article_id'=>'$'.$id,'^delete_date'],['orderBy'=>['sort','ASC']]);
+            }
         }
+
+        return $article;
+    }
+    static function bySlug($link){
+        $article = Db::easy('article.id',['slug'=>$link]);
+        if(!empty($article)){
+            $article = self::byId($article[0]['id']);
+        }
+        return $article;
     }
 
     static function find($condition){

@@ -6,6 +6,7 @@ namespace Neoan3\Frame;
 use Neoan3\Apps\Db;
 use Neoan3\Apps\Cache;
 use Neoan3\Apps\DbException;
+use Neoan3\Apps\Session;
 use Neoan3\Apps\Stateless;
 use Neoan3\Core\Serve;
 
@@ -21,8 +22,11 @@ class Neoan extends Serve {
         } catch (DbException $e){
             echo "Warning: Database connection failed.";
         }
+        // JWT/Stateless auth
         Stateless::setSecret('NiemalsGenugGeld');
 
+        // Hybrid: construct session
+        new Session();
         parent::__construct();
 
 
@@ -46,7 +50,7 @@ class Neoan extends Serve {
         return $this;
     }
     function restrict($scope){
-        $this->currentAuth =Stateless::restrict($scope);
+        $this->currentAuth = Stateless::restrict($scope);
         return $this;
     }
 
@@ -73,6 +77,7 @@ class Neoan extends Serve {
             ],
             'js'=>[
                 ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
+                ['src'=> base.'asset/tinymce/js/tinymce/tinymce.min.js'],
                 ['src'=> base.'node_modules/vue/dist/vue.js'],
                 ['src'=> base.'node_modules/axios/dist/axios.min.js'],
                 ['src'=> base.'node_modules/lodash/lodash.min.js'],

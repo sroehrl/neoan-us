@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00feede6866ef3fd88e5f82127d7f64c",
+    "content-hash": "980e938ca19f61645e7fb3daa33e5cca",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sroehrl/neoan3-db.git",
-                "reference": "097fc3dc396072a9fe7c657c815106c8a32f9677"
+                "reference": "0eba922567ecf5df601414f053d3704f5f96ced2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-db/zipball/097fc3dc396072a9fe7c657c815106c8a32f9677",
-                "reference": "097fc3dc396072a9fe7c657c815106c8a32f9677",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-db/zipball/0eba922567ecf5df601414f053d3704f5f96ced2",
+                "reference": "0eba922567ecf5df601414f053d3704f5f96ced2",
                 "shasum": ""
             },
             "require": {
@@ -227,7 +227,7 @@
                 }
             ],
             "description": "neoan3 mysqli class",
-            "time": "2019-06-13T15:45:02+00:00"
+            "time": "2019-06-14T16:02:27+00:00"
         },
         {
             "name": "neoan3-apps/jwt",
@@ -235,12 +235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sroehrl/neoan3-jwt.git",
-                "reference": "d12e0c9e74e9d1175e69030a51254a38ddfc59cb"
+                "reference": "69e4020641bcea9b21a8f211d1af86b28c2275e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-jwt/zipball/d12e0c9e74e9d1175e69030a51254a38ddfc59cb",
-                "reference": "d12e0c9e74e9d1175e69030a51254a38ddfc59cb",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-jwt/zipball/69e4020641bcea9b21a8f211d1af86b28c2275e5",
+                "reference": "69e4020641bcea9b21a8f211d1af86b28c2275e5",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 }
             ],
             "description": "neoan3 wrapper for JSON WEB TOKEN using Firebase",
-            "time": "2019-05-30T21:32:45+00:00"
+            "time": "2019-06-13T12:32:40+00:00"
         },
         {
             "name": "neoan3-apps/ops",
@@ -271,12 +271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sroehrl/neoan3-ops.git",
-                "reference": "9dc3b042aea5f750919f93c6723aad50876c9154"
+                "reference": "d0e44df4cbe0c461675696ed8ef0899b7069c76d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/9dc3b042aea5f750919f93c6723aad50876c9154",
-                "reference": "9dc3b042aea5f750919f93c6723aad50876c9154",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/d0e44df4cbe0c461675696ed8ef0899b7069c76d",
+                "reference": "d0e44df4cbe0c461675696ed8ef0899b7069c76d",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +292,34 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "neoan3 common string operations helper class",
-            "time": "2019-05-30T23:11:03+00:00"
+            "time": "2019-06-14T20:33:31+00:00"
+        },
+        {
+            "name": "neoan3-apps/session",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sroehrl/neoan3-session.git",
+                "reference": "0913e9d1f6cc5ed838007acee0a08227bfa5f66b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-session/zipball/0913e9d1f6cc5ed838007acee0a08227bfa5f66b",
+                "reference": "0913e9d1f6cc5ed838007acee0a08227bfa5f66b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Neoan3\\Apps\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "neoan3 session class",
+            "time": "2019-05-29T13:08:44+00:00"
         },
         {
             "name": "neoan3-apps/stateless",
@@ -376,7 +403,9 @@
         "leafo/scssphp": 20,
         "neoan3-apps/stateless": 20,
         "neoan3-apps/cache": 20,
-        "neoan3-model/user": 20
+        "neoan3-model/user": 20,
+        "neoan3-apps/session": 20,
+        "neoan3-apps/db": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -1,8 +1,6 @@
 <form v-on:submit.prevent="login">
-    <div v-if="loggedIn">
-        <h2>You are logged in.</h2>
-    </div>
-    <div v-else>
+
+    <div v-if="!loggedIn">
         <div class="field">
             <label for="username" class="label">Username</label>
             <input type="text" class="input" id="username" required v-model="username">

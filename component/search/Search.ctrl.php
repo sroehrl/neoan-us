@@ -12,6 +12,7 @@ class Search extends Neoan {
     function getSearch($obj){
         try{
             $found = [];
+//            Db::debug();
             $hits = Db::ask('/search',['text'=>$obj['q']]);
             foreach($hits as $hit){
                 $found[] = ArticleModel::byId($hit['id']);

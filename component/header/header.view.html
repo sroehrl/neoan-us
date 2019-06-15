@@ -19,19 +19,19 @@
         </div>
 
     </nav>
-    <section class="section">
+    <section class="section" v-if="searchResults.length>0&&text!==''" v-bind:style="{display:'block'}" style="display: none">
         <div class="columns is-multiline">
-            <div class=" column is-one-quarter" v-for="n in 3">
+            <div class=" column is-one-quarter" v-for="article in searchResults">
                 <article class="message is-info">
                     <div class="message-header">
-                        <p>Category</p>
+                        <p>{{article.category.name}}</p>
                     </div>
                     <div class="message-body">
-                        <div class="title">Title</div>
+                        <div class="title">{{article.name}}</div>
                         <div>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.
+                            {{article.teaser}}
                         </div>
-
+                        <a v-bind:href="'{{base}}article/'+article.slug+'/'">Read</a>
                     </div>
 
                 </article>

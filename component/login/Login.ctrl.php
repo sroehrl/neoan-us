@@ -4,6 +4,7 @@
 namespace Neoan3\Components;
 
 use Neoan3\Apps\Db;
+use Neoan3\Apps\Session;
 use Neoan3\Apps\Stateless;
 use Neoan3\Core\RouteException;
 use Neoan3\Frame\Neoan;
@@ -38,6 +39,8 @@ class Login extends Neoan {
             throw new RouteException('Wrong credentials', 401);
         }
         $jwt = Stateless::assign($user[0]['id'],'user',['exp'=>time()+(2*60*60*1000)]);
+        // For hybrid auth
+        Session::login($user[0]['id']);
         return ['token'=>$jwt,'user'=>$user[0]];
     }
 
