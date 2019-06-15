@@ -44,4 +44,9 @@ class Login extends Neoan {
         return ['token'=>$jwt,'user'=>$user[0]];
     }
 
+    function deleteLogin(){
+        $jwt = Stateless::restrict();
+        Session::logout();
+    }
+
 }

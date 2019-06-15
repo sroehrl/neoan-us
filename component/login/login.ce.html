@@ -24,6 +24,9 @@
 
         </div>
     </div>
+    <div v-else>
+        <button type="button" class="button is-warning" v-on:click="logout">Sign out as {{localUser.user_name}}</button>
+    </div>
 
 
 </form>

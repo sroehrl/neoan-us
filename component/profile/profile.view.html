@@ -1,0 +1,8 @@
+<section class="section main" id="profile">
+    <div class="tabs">
+        <ul>
+            <li v-for="(tab,i) in tabs" v-bind:class="{'is-active':currentTab===i}"><a v-on:click.prevent="currentTab=i">{{tab.name}}</a></li>
+        </ul>
+    </div>
+    <article-list v-if="currentTab===0" v-bind:author="author"></article-list>
+</section>
