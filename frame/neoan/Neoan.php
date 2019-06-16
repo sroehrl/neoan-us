@@ -9,82 +9,114 @@ use Neoan3\Apps\DbException;
 use Neoan3\Apps\Session;
 use Neoan3\Apps\Stateless;
 use Neoan3\Core\Serve;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Neoan extends Serve {
+    private $credentials = [];
     private $developmentMode = true;
     protected $currentAuth = false;
+
     function __construct() {
-        if(!$this->developmentMode){
+        if (!$this->developmentMode) {
             Cache::setCaching('+2 hours');
         }
-        try{
-            Db::setEnvironment(['name'=>'neoan_us','assumes_uuid'=>true]);
-        } catch (DbException $e){
-            echo "Warning: Database connection failed.";
+        // SETUP
+        /*
+         * Sharing projects oe.g via GitHub? Hide credentials and place them OUTSIDE of your server's web-root.
+         * Here we are storing credentials in a JSON file.
+         * */
+        $credentialFile = dirname(dirname(path)) . '/credentials/credentials.json';
+        if(file_exists($credentialFile)){
+            $this->credentials = json_decode(file_get_contents($credentialFile), true);
         }
+
+
+        // database
+        $this->setUpDb();
+
         // JWT/Stateless auth
-        Stateless::setSecret('NiemalsGenugGeld');
+        Stateless::setSecret($this->credentials['stateless']);
 
         // Hybrid: construct session
         new Session();
         parent::__construct();
 
-
         $this->includeElement('header');
-        $this->hook('header','header');
-        $this->hook('footer','footer');
+        $this->hook('header', 'header');
+        $this->hook('footer', 'footer');
 
     }
-    function vueComponent($element,$params=[]){
+
+    function vueComponent($element, $params = []) {
         $params['base'] = base;
-        $path = path.'/component/'.$element.'/'.$element.'.ce.';
-        if(file_exists($path.$this->viewExt)){
-            $this->footer .= '<template id="'.$element.'">'.
-                             $this->fileContent($path.$this->viewExt,$params).
-                             '</template>';
+        $path = path . '/component/' . $element . '/' . $element . '.ce.';
+        if (file_exists($path . $this->viewExt)) {
+            $this->footer .= '<template id="' . $element . '">' .
+                $this->fileContent($path . $this->viewExt, $params) .
+                '</template>';
         }
-        if(file_exists($path.'js')){
-            $this->js .= $this->fileContent($path.'js',$params);
+        if (file_exists($path . 'js')) {
+            $this->js .= $this->fileContent($path . 'js', $params);
         }
 
         return $this;
     }
-    function restrict($scope){
+
+    function restrict($scope) {
         $this->currentAuth = Stateless::restrict($scope);
         return $this;
     }
 
     function output($params = []) {
         parent::output($params);
-        if(!$this->developmentMode){
+        if (!$this->developmentMode) {
             Cache::write();
+        }
+    }
+    function newMail(){
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = $this->credentials['mail']['host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $this->credentials['mail']['username'];
+        $mail->Password = $this->credentials['mail']['password'];
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        return $mail;
+    }
+
+    private function setUpDb() {
+        try {
+            Db::setEnvironment($this->credentials['db']);
+        } catch (DbException $e) {
+            echo "Warning: Database connection failed.";
         }
     }
 
     function constants() {
         return [
-            'base'=>[base],
-            'link'=>[
+            'base' => [base],
+            'link' => [
                 [
-                    'sizes'=>'32x32',
-                    'type'=>'image/png',
-                    'rel'=>'icon',
-                    'href'=>'asset/neoan-favicon.png'
+                    'sizes' => '32x32',
+                    'type' => 'image/png',
+                    'rel' => 'icon',
+                    'href' => 'asset/neoan-favicon.png'
                 ]
             ],
-            'meta'=>[
-                ['name'=>'viewport','content'=>'width=device-width, initial-scale=1']
+            'meta' => [
+                ['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1']
             ],
-            'js'=>[
-                ['src'=> 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
-                ['src'=> base.'asset/tinymce/js/tinymce/tinymce.min.js'],
-                ['src'=> base.'node_modules/vue/dist/vue.js'],
-                ['src'=> base.'node_modules/axios/dist/axios.min.js'],
-                ['src'=> base.'node_modules/lodash/lodash.min.js'],
-                ['src'=> path.'/frame/neoan/axios-wrapper.js','data'=>['base'=>base]],
+            'js' => [
+                ['src' => 'https://use.fontawesome.com/releases/v5.3.1/js/all.js'],
+                ['src' => base . 'asset/tinymce/js/tinymce/tinymce.min.js'],
+                ['src' => base . 'node_modules/vue/dist/vue.js'],
+                ['src' => base . 'node_modules/axios/dist/axios.min.js'],
+                ['src' => base . 'node_modules/lodash/lodash.min.js'],
+                ['src' => path . '/frame/neoan/axios-wrapper.js', 'data' => ['base' => base]],
             ],
-            'stylesheet'=>[
-                ''.base.'frame/neoan/main.css'
+            'stylesheet' => [
+                '' . base . 'frame/neoan/main.css'
             ]
         ];
     }

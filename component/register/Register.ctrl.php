@@ -5,6 +5,7 @@ namespace Neoan3\Components;
 
 use Neoan3\Apps\Db;
 use Neoan3\Apps\DbException;
+use Neoan3\Apps\Ops;
 use Neoan3\Apps\Stateless;
 use Neoan3\Core\RouteException;
 use Neoan3\Core\Unicore;
@@ -47,8 +48,6 @@ class Register extends Unicore {
         if(!empty($userNameExists) || !empty($emailExists)){
             throw new RouteException('Duplicate entry',400);
         }
-
-
         $uId = Db::uuid()->uuid;
         Db::ask('user',[
             'user_name'=>trim($credentials['username']),
@@ -58,10 +57,14 @@ class Register extends Unicore {
             'user_id'=>'$'.$uId,
             'password'=>'='.password_hash($credentials['password'], PASSWORD_DEFAULT)
         ]);
+        $hash = Ops::hash(32);
         Db::ask('user_email',[
             'user_id'=>'$'.$uId,
-            'email'=>trim($credentials['email'])
+            'email'=>trim($credentials['email']),
+            'confirm_code'=>$hash
         ]);
+        $verify = new Verify();
+        $verify->confirmEmail(trim($credentials['email']),$hash);
         $jwt = Stateless::assign($uId,'user',['exp'=>time()+(2*60*60*1000)]);
         return ['token'=>$jwt];
     }

@@ -8,6 +8,7 @@ const registerForm = {
             email:'',
             acceptTAC:false,
             duplicate:false,
+            showModal:false,
             loggedIn:localStorage.token
         }
     },
