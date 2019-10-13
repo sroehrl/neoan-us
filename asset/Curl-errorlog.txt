@@ -1,0 +1,53 @@
+*   Trying 140.82.114.6...
+* TCP_NODELAY set
+* Connected to api.github.com (140.82.114.6) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: C:\xampp\apache\bin\cacert.pem
+  CApath: none
+* SSL connection using unknown / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=California; L=San Francisco; O=GitHub, Inc.; CN=*.github.com
+*  start date: Jul  8 00:00:00 2019 GMT
+*  expire date: Jul 16 12:00:00 2020 GMT
+*  subjectAltName: host "api.github.com" matched cert's "*.github.com"
+*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=DigiCert SHA2 High Assurance Server CA
+*  SSL certificate verify ok.
+> GET /users/sroehrl/events HTTP/1.1
+Host: api.github.com
+Accept: */*
+User-Agent: neoan3
+Content-Type: application/json
+Authorization: token 88804ad323b8e343e558f1e7d8c288b5a6ef6e25
+
+< HTTP/1.1 200 OK
+< Date: Sun, 13 Oct 2019 17:13:57 GMT
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 133895
+< Server: GitHub.com
+< Status: 200 OK
+< X-RateLimit-Limit: 5000
+< X-RateLimit-Remaining: 4998
+< X-RateLimit-Reset: 1570990437
+< Cache-Control: private, max-age=60, s-maxage=60
+< Vary: Accept, Authorization, Cookie, X-GitHub-OTP
+< ETag: "0d54f9be4bac5ec29487a463f817d948"
+< Last-Modified: Sat, 12 Oct 2019 19:51:41 GMT
+< X-Poll-Interval: 60
+< X-OAuth-Scopes: notifications, public_repo, read:packages, read:user, repo:status, repo_deployment, user:follow, write:discussion
+< X-Accepted-OAuth-Scopes: 
+< X-GitHub-Media-Type: github.v3; format=json
+< Link: <https://api.github.com/user/28542911/events?page=2>; rel="next", <https://api.github.com/user/28542911/events?page=9>; rel="last"
+< Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type
+< Access-Control-Allow-Origin: *
+< Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+< X-Frame-Options: deny
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+< Content-Security-Policy: default-src 'none'
+< Vary: Accept-Encoding
+< X-GitHub-Request-Id: F814:4CA1:447712:8026EF:5DA35B55
+< 
+* Connection #0 to host api.github.com left intact

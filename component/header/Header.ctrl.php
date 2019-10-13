@@ -5,5 +5,13 @@ namespace Neoan3\Components;
 
 use Neoan3\Core\Unicore;
 
-class Header extends Unicore {
+class Header extends Unicore
+{
+    function init()
+    {
+        $this->uni('neoan3')
+             ->hook('main', 'header')
+             ->output();
+    }
+
 }

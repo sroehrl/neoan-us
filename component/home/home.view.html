@@ -1,0 +1,44 @@
+<section class="main-teaser">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="card limited-card">
+                    <div class="card-content">
+                        <h3 class="subtitle">Live GitHub activity (from {{gitHubCount}} public repos)</h3>
+                        <ul>
+                            <li n-for="gitHub as activity">
+                                <div class="columns">
+                                    <div class="column">Repo: <a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
+                                    <div class="column">{{activity.created}}</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card limited-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL5JRD-ivYK3E3Jt2eEgTIB37_lvsTzjJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="card limited-card">
+                    <div class="card-content">
+                        one
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card limited-card">
+                    <div class="card-content">
+                        one
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51b03c526ea990d6d7d67547eabed0de",
+    "content-hash": "44f300f108eb6c47a6b2746e9135c4c8",
     "packages": [
         {
             "name": "firebase/php-jwt",
-            "version": "dev-master",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "bac0422822b92fe7a0ed1fc7b1b633d9efa37bae"
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/bac0422822b92fe7a0ed1fc7b1b633d9efa37bae",
-                "reference": "bac0422822b92fe7a0ed1fc7b1b633d9efa37bae",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
                 "shasum": ""
             },
             "require": {
@@ -50,39 +50,198 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2018-01-26T19:13:29+00:00"
+            "time": "2017-06-27T22:17:23+00:00"
         },
         {
-            "name": "leafo/scssphp",
+            "name": "google/apiclient",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/leafo/scssphp.git",
-                "reference": "4ba0e47c5facdbb1155087d736e576b9602b5fa2"
+                "url": "https://github.com/googleapis/google-api-php-client.git",
+                "reference": "cd3c37998020d91ae4eafca4f26a92da4dabba83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/4ba0e47c5facdbb1155087d736e576b9602b5fa2",
-                "reference": "4ba0e47c5facdbb1155087d736e576b9602b5fa2",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/cd3c37998020d91ae4eafca4f26a92da4dabba83",
+                "reference": "cd3c37998020d91ae4eafca4f26a92da4dabba83",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6.0 || ^7"
+                "firebase/php-jwt": "~2.0||~3.0||~4.0||~5.0",
+                "google/apiclient-services": "~0.13",
+                "google/auth": "^1.0",
+                "guzzlehttp/guzzle": "~5.3.1||~6.0",
+                "guzzlehttp/psr7": "^1.2",
+                "monolog/monolog": "^1.17|^2.0",
+                "php": ">=5.4",
+                "phpseclib/phpseclib": "~0.3.10||~2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.6",
-                "squizlabs/php_codesniffer": "~2.5",
-                "twbs/bootstrap": "~4.3",
-                "zurb/foundation": "~6.5"
+                "cache/filesystem-adapter": "^0.3.2",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "phpcompatibility/php-compatibility": "^9.2",
+                "phpunit/phpunit": "~4.8.36",
+                "squizlabs/php_codesniffer": "~2.3",
+                "symfony/css-selector": "~2.1",
+                "symfony/dom-crawler": "~2.1"
             },
-            "bin": [
-                "bin/pscss"
+            "suggest": {
+                "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Google_": "src/"
+                },
+                "classmap": [
+                    "src/Google/Service/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
             ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2019-09-11T17:38:10+00:00"
+        },
+        {
+            "name": "google/apiclient-services",
+            "version": "v0.117",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-api-php-client-services.git",
+                "reference": "ae2f0f6f626db67d83ea0a0cd15100b9d083874b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/ae2f0f6f626db67d83ea0a0cd15100b9d083874b",
+                "reference": "ae2f0f6f626db67d83ea0a0cd15100b9d083874b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Google_Service_": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2019-10-07T00:23:24+00:00"
+        },
+        {
+            "name": "google/auth",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-auth-library-php.git",
+                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
+                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "~2.0|~3.0|~4.0|~5.0",
+                "guzzlehttp/guzzle": "~5.3.1|~6.0",
+                "guzzlehttp/psr7": "^1.2",
+                "php": ">=5.4",
+                "psr/cache": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "guzzlehttp/promises": "0.1.1|^1.3",
+                "phpseclib/phpseclib": "^2",
+                "phpunit/phpunit": "^4.8.36|^5.7",
+                "sebastian/comparator": ">=1.2.3"
+            },
+            "suggest": {
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings or for token management. Please require version ^2."
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Leafo\\ScssPhp\\": "src/"
+                    "Google\\Auth\\": "src"
                 }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google Auth Library for PHP",
+            "homepage": "http://github.com/google/google-auth-library-php",
+            "keywords": [
+                "Authentication",
+                "google",
+                "oauth2"
+            ],
+            "time": "2019-10-01T18:35:05+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "a7010cc9b52ecfa00051bb26e4ae025958fe9851"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a7010cc9b52ecfa00051bb26e4ae025958fe9851",
+                "reference": "a7010cc9b52ecfa00051bb26e4ae025958fe9851",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.1"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -90,21 +249,145 @@
             ],
             "authors": [
                 {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "scssphp is a compiler for SCSS written in PHP.",
-            "homepage": "http://leafo.github.io/scssphp/",
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "css",
-                "less",
-                "sass",
-                "scss",
-                "stylesheet"
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
             ],
-            "time": "2019-05-16T17:18:40+00:00"
+            "time": "2019-08-23T22:16:30+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "17d36ed176c998839582c739ce0753381598edf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/17d36ed176c998839582c739ce0753381598edf0",
+                "reference": "17d36ed176c998839582c739ce0753381598edf0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.27 || ^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2019-07-02T14:54:06+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "2595b33c1c924889b474d324f3d719fa40b6954e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2595b33c1c924889b474d324f3d719fa40b6954e",
+                "reference": "2595b33c1c924889b474d324f3d719fa40b6954e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0",
+                "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "ext-zlib": "*",
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+            },
+            "suggest": {
+                "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "psr-7",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2019-08-13T16:05:52+00:00"
         },
         {
             "name": "mnsami/composer-custom-directory-installer",
@@ -159,23 +442,64 @@
             "time": "2017-08-14T19:50:19+00:00"
         },
         {
-            "name": "neoan3-apps/cache",
+            "name": "monolog/monolog",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-cache.git",
-                "reference": "440e6e461a405ca3f6946c39202d780eebbf09c7"
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "6d51b319796e6391139932f78fb76a144a867b57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-cache/zipball/440e6e461a405ca3f6946c39202d780eebbf09c7",
-                "reference": "440e6e461a405ca3f6946c39202d780eebbf09c7",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6d51b319796e6391139932f78fb76a144a867b57",
+                "reference": "6d51b319796e6391139932f78fb76a144a867b57",
                 "shasum": ""
             },
+            "require": {
+                "php": "^7.2",
+                "psr/log": "^1.0.1"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "elasticsearch/elasticsearch": "^6.0",
+                "graylog2/gelf-php": "^1.4.2",
+                "jakub-onderka/php-parallel-lint": "^0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpspec/prophecy": "^1.6.1",
+                "phpunit/phpunit": "^8.3",
+                "predis/predis": "^1.1",
+                "rollbar/rollbar": "^1.3",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mbstring": "Allow to work properly with unicode symbols",
+                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Neoan3\\Apps\\": "./"
+                    "Monolog\\": "src/Monolog"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -184,25 +508,60 @@
             ],
             "authors": [
                 {
-                    "name": "neoan",
-                    "email": "neoan@neoan.us"
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
                 }
             ],
-            "description": "Caching based on output buffer",
-            "time": "2019-06-11T22:20:33+00:00"
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2019-09-17T07:44:07+00:00"
         },
         {
-            "name": "neoan3-apps/db",
+            "name": "neoan3-apps/curl",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-db.git",
-                "reference": "0eba922567ecf5df601414f053d3704f5f96ced2"
+                "url": "https://github.com/sroehrl/neoan3-curl.git",
+                "reference": "dfb50629dc170a053601e2aeefc6bfb8e5def2f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-db/zipball/0eba922567ecf5df601414f053d3704f5f96ced2",
-                "reference": "0eba922567ecf5df601414f053d3704f5f96ced2",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-curl/zipball/dfb50629dc170a053601e2aeefc6bfb8e5def2f1",
+                "reference": "dfb50629dc170a053601e2aeefc6bfb8e5def2f1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Neoan3\\Apps\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "neoan3 curl class",
+            "time": "2019-10-12T19:51:57+00:00"
+        },
+        {
+            "name": "neoan3-apps/db",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sroehrl/neoan3-db.git",
+                "reference": "b2859d08f44b20f8174fabfba51a4e8becec70f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-db/zipball/b2859d08f44b20f8174fabfba51a4e8becec70f0",
+                "reference": "b2859d08f44b20f8174fabfba51a4e8becec70f0",
                 "shasum": ""
             },
             "require": {
@@ -227,24 +586,64 @@
                 }
             ],
             "description": "neoan3 mysqli class",
-            "time": "2019-06-14T16:02:27+00:00"
+            "time": "2019-09-10T17:54:43+00:00"
         },
         {
-            "name": "neoan3-apps/jwt",
-            "version": "dev-master",
+            "name": "neoan3-apps/ops",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-jwt.git",
-                "reference": "69e4020641bcea9b21a8f211d1af86b28c2275e5"
+                "url": "https://github.com/sroehrl/neoan3-ops.git",
+                "reference": "1480353f455f9ea3398f71f6148ea15d9f3e2eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-jwt/zipball/69e4020641bcea9b21a8f211d1af86b28c2275e5",
-                "reference": "69e4020641bcea9b21a8f211d1af86b28c2275e5",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/1480353f455f9ea3398f71f6148ea15d9f3e2eac",
+                "reference": "1480353f455f9ea3398f71f6148ea15d9f3e2eac",
                 "shasum": ""
             },
             "require": {
-                "firebase/php-jwt": "dev-master"
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Neoan3\\Apps\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "neoan3 common string operations helper class",
+            "time": "2019-09-26T23:45:13+00:00"
+        },
+        {
+            "name": "neoan3-apps/transformer",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sroehrl/neoan3-transformer.git",
+                "reference": "49b825a47159887f17841f9927424a3c3acd419d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-transformer/zipball/49b825a47159887f17841f9927424a3c3acd419d",
+                "reference": "49b825a47159887f17841f9927424a3c3acd419d",
+                "shasum": ""
+            },
+            "require": {
+                "neoan3-apps/db": "^0.2.1",
+                "neoan3-model/index": "^0.0.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3"
             },
             "type": "library",
             "autoload": {
@@ -259,122 +658,32 @@
             "authors": [
                 {
                     "name": "Stefan Roehrl",
-                    "homepage": "http://neoan.us"
+                    "email": "neoan@neoan.us"
                 }
             ],
-            "description": "neoan3 wrapper for JSON WEB TOKEN using Firebase",
-            "time": "2019-06-13T12:32:40+00:00"
+            "description": "Model abstraction utilizing neoan3's model transformers",
+            "time": "2019-09-28T00:28:18+00:00"
         },
         {
-            "name": "neoan3-apps/ops",
-            "version": "dev-master",
+            "name": "neoan3-model/index",
+            "version": "v0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-ops.git",
-                "reference": "d0e44df4cbe0c461675696ed8ef0899b7069c76d"
+                "url": "https://github.com/sroehrl/neoan3-indexModel.git",
+                "reference": "3d432ebfd56cbbe794a9f6a6fc912b173d496acf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/d0e44df4cbe0c461675696ed8ef0899b7069c76d",
-                "reference": "d0e44df4cbe0c461675696ed8ef0899b7069c76d",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-indexModel/zipball/3d432ebfd56cbbe794a9f6a6fc912b173d496acf",
+                "reference": "3d432ebfd56cbbe794a9f6a6fc912b173d496acf",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "ext-mbstring": "*",
-                "ext-openssl": "*"
+                "mnsami/composer-custom-directory-installer": "1.1.*"
             },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Neoan3\\Apps\\": "./"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "neoan3 common string operations helper class",
-            "time": "2019-06-14T20:33:31+00:00"
-        },
-        {
-            "name": "neoan3-apps/session",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-session.git",
-                "reference": "0913e9d1f6cc5ed838007acee0a08227bfa5f66b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-session/zipball/0913e9d1f6cc5ed838007acee0a08227bfa5f66b",
-                "reference": "0913e9d1f6cc5ed838007acee0a08227bfa5f66b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Neoan3\\Apps\\": "./"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "neoan3 session class",
-            "time": "2019-05-29T13:08:44+00:00"
-        },
-        {
-            "name": "neoan3-apps/stateless",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-stateless.git",
-                "reference": "f6823ec40a5e6a54368c623c6bf25c69b6e551ab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-stateless/zipball/f6823ec40a5e6a54368c623c6bf25c69b6e551ab",
-                "reference": "f6823ec40a5e6a54368c623c6bf25c69b6e551ab",
-                "shasum": ""
-            },
-            "require": {
-                "neoan3-apps/jwt": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Neoan3\\Apps\\": "./"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "neoan",
-                    "email": "neoan@neoan.us"
-                }
-            ],
-            "description": "stateless authentication / verification for neoan3",
-            "time": "2019-06-02T00:36:45+00:00"
-        },
-        {
-            "name": "neoan3-model/user",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sroehrl/neoan3-userModel.git",
-                "reference": "8a8df160021f71cc216fd1516a88bbdb4126ef08"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-userModel/zipball/8a8df160021f71cc216fd1516a88bbdb4126ef08",
-                "reference": "8a8df160021f71cc216fd1516a88bbdb4126ef08",
-                "shasum": ""
-            },
-            "require": {
-                "mnsami/composer-custom-directory-installer": "1.1.*",
-                "neoan3-apps/db": "dev-master",
-                "neoan3-apps/ops": "dev-master"
+            "require-dev": {
+                "phpunit/phpunit": "^8.4@dev"
             },
             "type": "library",
             "extra": {
@@ -384,92 +693,294 @@
                     "./component/{$name}": []
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "demo user model",
-            "support": {
-                "source": "https://github.com/sroehrl/neoan3-userModel/tree/master",
-                "issues": "https://github.com/sroehrl/neoan3-userModel/issues"
-            },
-            "time": "2019-06-03T03:24:53+00:00"
+            "time": "2019-09-13T23:01:22+00:00"
         },
         {
-            "name": "phpmailer/phpmailer",
-            "version": "6.0.x-dev",
+            "name": "phpseclib/phpseclib",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "ea25dc122d22966b7dd4ca1083c63afeeb50dfcd"
+                "url": "https://github.com/phpseclib/phpseclib.git",
+                "reference": "cf8a7ef7159c5d06d986e082000ac35fb8b57280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/ea25dc122d22966b7dd4ca1083c63afeeb50dfcd",
-                "reference": "ea25dc122d22966b7dd4ca1083c63afeeb50dfcd",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/cf8a7ef7159c5d06d986e082000ac35fb8b57280",
+                "reference": "cf8a7ef7159c5d06d986e082000ac35fb8b57280",
                 "shasum": ""
             },
             "require": {
-                "ext-ctype": "*",
-                "php": ">=5.5.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "doctrine/annotations": "1.2.*",
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "4.*",
-                "zendframework/zend-eventmanager": "3.0.*",
-                "zendframework/zend-i18n": "2.7.3",
-                "zendframework/zend-serializer": "2.7.*"
+                "phing/phing": "~2.7",
+                "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
+                "sami/sami": "~2.0",
+                "squizlabs/php_codesniffer": "~2.0"
             },
             "suggest": {
-                "ext-mbstring": "Needed to send email in multibyte encoding charset",
-                "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
-                "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
-                "psr/log": "For optional PSR-3 debug logging",
-                "stevenmaguire/oauth2-microsoft": "Needed for Microsoft XOAUTH2 authentication",
-                "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)"
+                "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+                "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
+                "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
+                "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "phpseclib/bootstrap.php"
+                ],
                 "psr-4": {
-                    "PHPMailer\\PHPMailer\\": "src/"
+                    "phpseclib\\": "phpseclib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-2.1"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net",
+                    "role": "Lead Developer"
                 },
                 {
-                    "name": "Marcus Bointon",
-                    "email": "phpmailer@synchromedia.co.uk"
+                    "name": "Patrick Monnerat",
+                    "email": "pm@datasphere.ch",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Andy Prevost",
-                    "email": "codeworxtech@users.sourceforge.net"
+                    "name": "Andreas Fischer",
+                    "email": "bantu@phpbb.com",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Brent R. Matzelle"
+                    "name": "Hans-Jürgen Petrich",
+                    "email": "petrich@tronic-media.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2017-08-28T11:42:41+00:00"
+            "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+            "homepage": "http://phpseclib.sourceforge.net",
+            "keywords": [
+                "BigInteger",
+                "aes",
+                "asn.1",
+                "asn1",
+                "blowfish",
+                "crypto",
+                "cryptography",
+                "encryption",
+                "rsa",
+                "security",
+                "sftp",
+                "signature",
+                "signing",
+                "ssh",
+                "twofish",
+                "x.509",
+                "x509"
+            ],
+            "time": "2019-10-06T00:56:28+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "b9aa2cd4dd36cec02779bee07ee9dab8bd2d07d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/b9aa2cd4dd36cec02779bee07ee9dab8bd2d07d7",
+                "reference": "b9aa2cd4dd36cec02779bee07ee9dab8bd2d07d7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "time": "2019-10-04T14:04:41+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2019-08-29T13:16:46+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+                "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2018-11-21T13:42:00+00:00"
+        },
+        {
+            "name": "ralouphie/getallheaders",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ralouphie/getallheaders.git",
+                "reference": "120b605dfeb996808c31b6477290a714d356e822"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/120b605dfeb996808c31b6477290a714d356e822",
+                "reference": "120b605dfeb996808c31b6477290a714d356e822",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/getallheaders.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Khattar",
+                    "email": "ralph.khattar@gmail.com"
+                }
+            ],
+            "description": "A polyfill for getallheaders.",
+            "time": "2019-03-08T08:55:37+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "neoan3-apps/ops": 20,
-        "leafo/scssphp": 20,
-        "neoan3-apps/stateless": 20,
-        "neoan3-apps/cache": 20,
-        "neoan3-model/user": 20,
-        "neoan3-apps/session": 20,
-        "neoan3-apps/db": 20
+        "neoan3-apps/curl": 20,
+        "google/apiclient": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
