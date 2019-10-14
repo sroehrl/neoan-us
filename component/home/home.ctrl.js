@@ -23,4 +23,5 @@ burgers.forEach(e =>{
         e.classList.toggle('is-active');
         target.classList.toggle('is-active');
     })
-})
+});
+ScrollReveal().reveal('.reveal',{delay:500});
