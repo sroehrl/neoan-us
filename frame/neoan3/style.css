@@ -9146,7 +9146,7 @@ label.panel-block:hover {
 }
 
 .main-teaser {
-  background-image: url("asset/pure.jpg");
+  background-image: url("asset/galaxies-min.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -9154,7 +9154,8 @@ label.panel-block:hover {
 }
 
 .limited-card {
-  height: 430px;
+  max-height: 492px;
+  min-height: 401px;
   overflow-y: auto;
 }
 

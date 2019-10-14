@@ -14,7 +14,7 @@ class Home extends Unicore
 
     function init()
     {
-        $this->uni('neoan3')
+        $this->uni('neoan3')->addHead('title','Experienced Web Development')
 //             ->callback($this, 'youTube')
              ->callback($this, 'gitHub')
              ->hook('header', 'header')
