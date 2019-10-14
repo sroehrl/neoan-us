@@ -14,3 +14,12 @@ contactForm.addEventListener('submit',(ev)=>{
     }).catch(err=>{
         alert('ERROR: '+err.response.data.error)})
 });
+
+const burgers = document.querySelectorAll('.navbar-burger');
+burgers.forEach(e =>{
+    e.addEventListener('click',_=>{
+        const target = document.getElementById(e.dataset.target);
+        e.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+    })
+})
