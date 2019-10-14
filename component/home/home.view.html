@@ -2,30 +2,6 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                <div class="card limited-card has-background-dark has-text-primary">
-                    <div class="card-content">
-                        <h3 class="subtitle">Live GitHub activity (from {{gitHubCount}} public repos)</h3>
-                        <ul>
-                            <li n-for="gitHub as activity">
-                                <div class="columns">
-                                    <div class="column">Repo: <a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
-                                    <div class="column">{{activity.created}}</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card limited-card has-background-dark" style="overflow: hidden">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL5JRD-ivYK3E3Jt2eEgTIB37_lvsTzjJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column">
                 <div class="card limited-card has-background-primary">
                     <div class="card-content">
                         <h3 class="title">Where does my code run?</h3>
@@ -48,9 +24,32 @@
                             <a href="hhttps://akceatx.com" target="_blank" >
                                 <img src="{{base}}asset/logo_akcea.png" alt="Akcea Therapeutics">
                             </a>
-
-
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card limited-card has-background-dark" style="overflow: hidden">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL5JRD-ivYK3E3Jt2eEgTIB37_lvsTzjJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+
+            <div class="column">
+                <div class="card limited-card has-background-dark has-text-primary">
+                    <div class="card-content">
+                        <h3 class="subtitle">Live GitHub activity (from {{gitHubCount}} public repos)</h3>
+                        <ul>
+                            <li n-for="gitHub as activity">
+                                <div class="columns">
+                                    <div class="column">Repo: <a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
+                                    <div class="column">{{activity.created}}</div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
