@@ -1,12 +1,13 @@
 $base: '';
 
-$navbar-background-color: transparent;
+$navbar-background-color: rgba(0,0,0,.6);
 $navbar-item-hover-background-color: tranparent;
 $navbar-item-color: rgb(255, 39, 186);
 $navbar-item-hover-color: rgb(255, 0, 166);
 .navbar{
   font-size: 18px;
 }
+
 $title-color: rgb(255, 39, 186);
 $subtitle-color: $title-color;
 
