@@ -11,7 +11,9 @@
         "neoan3-model/index": "^0.0.1",
         "neoan3-apps/transformer": "^1",
         "neoan3-apps/curl": "dev-master",
-        "google/apiclient": "^2.0@dev"
+        "google/apiclient": "^2.0@dev",
+        "neoan3-apps/hcaptcha": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
     },
     "license": "MIT",
     "authors": [

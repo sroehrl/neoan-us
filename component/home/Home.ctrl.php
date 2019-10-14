@@ -27,17 +27,21 @@ class Home extends Unicore
 
     function gitHub(Neoan3 $uni)
     {
-        $token = $uni->getCredentials('github');
-
-        $repos = Curl::get('https://api.github.com/search/repositories', ['q' => 'user:sroehrl'], $token, 'token');
-
-        $this->totalGithubRepos = $repos['total_count'];
-
-        $this->gitHubActivity = Curl::get('https://api.github.com/users/sroehrl/events', [], $token, 'token');
-
-        foreach ($this->gitHubActivity as $i => $activity) {
-            $this->gitHubActivity[$i]['created'] = substr($activity['created_at'], 0, 10);
+        $filePath = path.'/component/home/github.json';
+        if(file_exists($filePath) && filemtime($filePath) > strtotime('2 hours ago')){
+            $this->gitHubActivity = json_decode(file_get_contents($filePath),true);
+        } else {
+            $token = $uni->getCredentials('github');
+            $repos = Curl::get('https://api.github.com/search/repositories', ['q' => 'user:sroehrl'], $token, 'token');
+            $this->totalGithubRepos = $repos['total_count'];
+            $this->gitHubActivity = Curl::get('https://api.github.com/users/sroehrl/events', [], $token, 'token');
+            foreach ($this->gitHubActivity as $i => $activity) {
+                $this->gitHubActivity[$i]['created'] = substr($activity['created_at'], 0, 10);
+            }
+            file_put_contents(path.'/component/home/github.json',json_encode($this->gitHubActivity));
         }
+
+
 
     }
 

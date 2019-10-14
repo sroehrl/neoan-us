@@ -1,0 +1,16 @@
+$base: '';
+
+$navbar-background-color: transparent;
+$navbar-item-hover-background-color: tranparent;
+$navbar-item-color: rgb(255, 39, 186);
+$navbar-item-hover-color: rgb(255, 0, 166);
+.navbar{
+  font-size: 18px;
+}
+
+$title-color: rgb(255, 39, 186);
+$subtitle-color: $title-color;
+
+@import "../../node_modules/bulma/bulma";
+@import "../../component/home/home";
+

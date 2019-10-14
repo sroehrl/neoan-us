@@ -44,6 +44,10 @@ class Neoan3 extends Serve
             ],
             'stylesheet' => [
                 '' . base . 'frame/neoan3/style.css',
+            ],
+            'js' => [
+                ['src' => base . 'node_modules/axios/dist/axios.min.js'],
+                ['src' => 'https://hcaptcha.com/1/api.js' ],
             ]
         ];
     }
