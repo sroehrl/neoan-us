@@ -10,7 +10,8 @@ contactForm.addEventListener('submit',(ev)=>{
     });
 
     axios.post('{{base}}api.v1/contact',body).then(res=>{
-        alert(res.body);
+        alert('Thank you. I will get back to you as soon as possible.');
+        contactForm.style.display = 'none';
     }).catch(err=>{
         alert('ERROR: '+err.response.data.error)})
 });

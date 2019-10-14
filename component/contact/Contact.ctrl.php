@@ -17,9 +17,17 @@ class Contact extends Neoan3
         $frame = new Neoan3();
         $debug = false;
         $credentials = $frame->credentials['blua_mail'];
+        Hcapture::setEnvironment($frame->credentials['neoan_us_hcaptcha']);
+        try{
+            $isHuman = Hcapture::isHuman($body);
+        } catch (\Exception $e){
+            var_dump('setup hcaptcha '. $e->getMessage());
+            die();
+        }
+
         try{
 
-            if($debug || Hcapture::isHuman()){
+            if($isHuman){
 
                 // send email
                 $mail = new PHPMailer(true);

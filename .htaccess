@@ -2,7 +2,7 @@
 #Options +FollowSymLinks
 RewriteEngine On
 
-RewriteBase /
+RewriteBase /neoan-us/
 
 
 # turn off www
