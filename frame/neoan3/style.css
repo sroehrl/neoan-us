@@ -5284,7 +5284,7 @@ a.list-item {
 }
 
 .navbar {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
@@ -6057,7 +6057,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   }
 
   .navbar-menu {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0;
   }
@@ -9148,7 +9148,8 @@ label.panel-block:hover {
 .main-teaser {
   background-image: url("asset/galaxies-min.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-color: #000000;
   min-height: 100vh;
   padding-top: 20vh;
 }
