@@ -48,6 +48,7 @@ class Neoan3 extends Serve
             'js' => [
                 ['src' => base . 'node_modules/axios/dist/axios.min.js'],
                 ['src' => 'https://hcaptcha.com/1/api.js' ],
+                ['src' => 'https://unpkg.com/scrollreveal@4.0.5' ],
             ]
         ];
     }
