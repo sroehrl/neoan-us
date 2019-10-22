@@ -29,7 +29,9 @@ class Home extends Unicore
     {
         $filePath = path.'/component/home/github.json';
         if(file_exists($filePath) && filemtime($filePath) > strtotime('2 hours ago')){
-            $this->gitHubActivity = json_decode(file_get_contents($filePath),true);
+            $info = json_decode(file_get_contents($filePath),true);
+            $this->gitHubActivity = $info['activity'];
+            $this->totalGithubRepos = $info['total'];
         } else {
             $token = $uni->getCredentials('github');
             $repos = Curl::get('https://api.github.com/search/repositories', ['q' => 'user:sroehrl'], $token, 'token');
@@ -38,7 +40,7 @@ class Home extends Unicore
             foreach ($this->gitHubActivity as $i => $activity) {
                 $this->gitHubActivity[$i]['created'] = substr($activity['created_at'], 0, 10);
             }
-            file_put_contents(path.'/component/home/github.json',json_encode($this->gitHubActivity));
+            file_put_contents(path.'/component/home/github.json',json_encode(['activity'=>$this->gitHubActivity,'total'=>$this->totalGithubRepos]));
         }
 
 
