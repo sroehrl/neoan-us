@@ -348,7 +348,7 @@ a strong {
   color: currentColor;
 }
 a:hover {
-  color: #363636;
+  color: #ff27ba;
 }
 
 code {
@@ -1513,7 +1513,7 @@ a.box:active {
 }
 .button:hover, .button.is-hovered {
   border-color: #b5b5b5;
-  color: #363636;
+  color: #ff27ba;
 }
 .button:focus, .button.is-focused {
   border-color: #3273dc;
@@ -4576,7 +4576,7 @@ a.tag:hover {
   padding: 0 0.75em;
 }
 .breadcrumb a:hover {
-  color: #363636;
+  color: #ff27ba;
 }
 .breadcrumb li {
   align-items: center;
@@ -6350,7 +6350,7 @@ body.has-spaced-navbar-fixed-bottom {
 .pagination-next:hover,
 .pagination-link:hover {
   border-color: #b5b5b5;
-  color: #363636;
+  color: #ff27ba;
 }
 .pagination-previous:focus,
 .pagination-next:focus,
@@ -9180,7 +9180,7 @@ label.panel-block:hover {
   display: inline-block;
 }
 .logo-links a img {
-  height: 60px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

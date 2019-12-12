@@ -1,11 +1,11 @@
-*   Trying 140.82.114.6...
+*   Trying 140.82.113.5...
 * TCP_NODELAY set
-* Connected to api.github.com (140.82.114.6) port 443 (#0)
+* Connected to api.github.com (140.82.113.5) port 443 (#0)
 * ALPN, offering http/1.1
 * successfully set certificate verify locations:
-*   CAfile: C:\xampp\apache\bin\cacert.pem
+*   CAfile: A:\localhost\apache\bin\curl-ca-bundle.crt
   CApath: none
-* SSL connection using unknown / TLS_AES_128_GCM_SHA256
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
 * ALPN, server accepted to use http/1.1
 * Server certificate:
 *  subject: C=US; ST=California; L=San Francisco; O=GitHub, Inc.; CN=*.github.com
@@ -19,24 +19,21 @@ Host: api.github.com
 Accept: */*
 User-Agent: neoan3
 Content-Type: application/json
-Authorization: token 88804ad323b8e343e558f1e7d8c288b5a6ef6e25
 
 < HTTP/1.1 200 OK
-< Date: Sun, 13 Oct 2019 17:13:57 GMT
+< Date: Mon, 14 Oct 2019 21:25:24 GMT
 < Content-Type: application/json; charset=utf-8
-< Content-Length: 133895
+< Content-Length: 128022
 < Server: GitHub.com
 < Status: 200 OK
-< X-RateLimit-Limit: 5000
-< X-RateLimit-Remaining: 4998
-< X-RateLimit-Reset: 1570990437
-< Cache-Control: private, max-age=60, s-maxage=60
-< Vary: Accept, Authorization, Cookie, X-GitHub-OTP
-< ETag: "0d54f9be4bac5ec29487a463f817d948"
-< Last-Modified: Sat, 12 Oct 2019 19:51:41 GMT
+< X-RateLimit-Limit: 60
+< X-RateLimit-Remaining: 59
+< X-RateLimit-Reset: 1571091924
+< Cache-Control: public, max-age=60, s-maxage=60
+< Vary: Accept
+< ETag: "b89d83e04b14f84d392c6df3397c3031"
+< Last-Modified: Mon, 14 Oct 2019 15:11:53 GMT
 < X-Poll-Interval: 60
-< X-OAuth-Scopes: notifications, public_repo, read:packages, read:user, repo:status, repo_deployment, user:follow, write:discussion
-< X-Accepted-OAuth-Scopes: 
 < X-GitHub-Media-Type: github.v3; format=json
 < Link: <https://api.github.com/user/28542911/events?page=2>; rel="next", <https://api.github.com/user/28542911/events?page=9>; rel="last"
 < Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type
@@ -48,6 +45,6 @@ Authorization: token 88804ad323b8e343e558f1e7d8c288b5a6ef6e25
 < Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
 < Content-Security-Policy: default-src 'none'
 < Vary: Accept-Encoding
-< X-GitHub-Request-Id: F814:4CA1:447712:8026EF:5DA35B55
+< X-GitHub-Request-Id: D6CF:5021:64ED6C:BC1F66:5DA4E7C3
 < 
 * Connection #0 to host api.github.com left intact

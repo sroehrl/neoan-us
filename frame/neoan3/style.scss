@@ -7,10 +7,10 @@ $navbar-item-hover-color: rgb(255, 0, 166);
 .navbar{
   font-size: 18px;
 }
-
 $title-color: rgb(255, 39, 186);
 $subtitle-color: $title-color;
 
+$link-hover: $title-color;
 @import "../../node_modules/bulma/bulma";
 @import "../../component/home/home";
 
