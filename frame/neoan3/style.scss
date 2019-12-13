@@ -11,6 +11,11 @@ $title-color: rgb(255, 39, 186);
 $subtitle-color: $title-color;
 
 $link-hover: $title-color;
+
+$tabs-link-color: $title-color;
+$tabs-link-hover-border-bottom-color: #3273dc;
+$tabs-link-hover-color: #3273dc;
+
 @import "../../node_modules/bulma/bulma";
 @import "../../component/home/home";
 
