@@ -6569,7 +6569,7 @@ label.panel-block:hover {
   border-bottom-color: #dbdbdb;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  color: #4a4a4a;
+  color: #ff27ba;
   display: flex;
   justify-content: center;
   margin-bottom: -1px;
@@ -6577,8 +6577,8 @@ label.panel-block:hover {
   vertical-align: top;
 }
 .tabs a:hover {
-  border-bottom-color: #363636;
-  color: #363636;
+  border-bottom-color: #3273dc;
+  color: #3273dc;
 }
 .tabs li {
   display: block;
