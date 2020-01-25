@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "3cfc1fc4fbb436245eee96ee4b6f6b21",
@@ -47,16 +47,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "dev-master",
+            "version": "6.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "df36d8dae3979cf927d5bbbed6f0427f39aadfec"
+                "reference": "400cefd25a23a3098486bfb52685b5367a464171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/df36d8dae3979cf927d5bbbed6f0427f39aadfec",
-                "reference": "df36d8dae3979cf927d5bbbed6f0427f39aadfec",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/400cefd25a23a3098486bfb52685b5367a464171",
+                "reference": "400cefd25a23a3098486bfb52685b5367a464171",
                 "shasum": ""
             },
             "require": {
@@ -71,6 +71,7 @@
                 "psr/log": "^1.1"
             },
             "suggest": {
+                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
@@ -109,7 +110,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-10-30T11:22:04+00:00"
+            "time": "2019-12-30T04:52:42+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -117,12 +118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "17d36ed176c998839582c739ce0753381598edf0"
+                "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/17d36ed176c998839582c739ce0753381598edf0",
-                "reference": "17d36ed176c998839582c739ce0753381598edf0",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/ac2529fc650684c5cd687e2b462d046cdbed556e",
+                "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +161,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2019-07-02T14:54:06+00:00"
+            "time": "2019-12-17T17:19:17+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -168,12 +169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2595b33c1c924889b474d324f3d719fa40b6954e"
+                "reference": "c291e45d40e638815990004e5f7ee367c2b752e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2595b33c1c924889b474d324f3d719fa40b6954e",
-                "reference": "2595b33c1c924889b474d324f3d719fa40b6954e",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/c291e45d40e638815990004e5f7ee367c2b752e9",
+                "reference": "c291e45d40e638815990004e5f7ee367c2b752e9",
                 "shasum": ""
             },
             "require": {
@@ -231,7 +232,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2019-08-13T16:05:52+00:00"
+            "time": "2019-12-21T15:35:40+00:00"
         },
         {
             "name": "mnsami/composer-custom-directory-installer",
@@ -291,17 +292,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sroehrl/neoan3-curl.git",
-                "reference": "dfb50629dc170a053601e2aeefc6bfb8e5def2f1"
+                "reference": "423cf4ee668419841633544fab0206a65a4650bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-curl/zipball/dfb50629dc170a053601e2aeefc6bfb8e5def2f1",
-                "reference": "dfb50629dc170a053601e2aeefc6bfb8e5def2f1",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-curl/zipball/423cf4ee668419841633544fab0206a65a4650bc",
+                "reference": "423cf4ee668419841633544fab0206a65a4650bc",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "ext-json": "*"
+                "ext-json": "*",
+                "ext-mbstring": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
             },
             "type": "library",
             "autoload": {
@@ -310,8 +315,11 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "description": "neoan3 curl class",
-            "time": "2019-10-12T19:51:57+00:00"
+            "time": "2019-12-11T20:34:45+00:00"
         },
         {
             "name": "neoan3-apps/db",
@@ -392,16 +400,16 @@
         },
         {
             "name": "neoan3-apps/ops",
-            "version": "1.0.2",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sroehrl/neoan3-ops.git",
-                "reference": "00e1f9939f59e0e3e6d1f1fa5ad72ebc07334174"
+                "reference": "d06fb935eb04b517b783003128ff8579e17e151c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/00e1f9939f59e0e3e6d1f1fa5ad72ebc07334174",
-                "reference": "00e1f9939f59e0e3e6d1f1fa5ad72ebc07334174",
+                "url": "https://api.github.com/repos/sroehrl/neoan3-ops/zipball/d06fb935eb04b517b783003128ff8579e17e151c",
+                "reference": "d06fb935eb04b517b783003128ff8579e17e151c",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +432,7 @@
                 "MIT"
             ],
             "description": "neoan3 common string operations helper class",
-            "time": "2019-11-17T02:03:42+00:00"
+            "time": "2019-12-07T22:14:58+00:00"
         },
         {
             "name": "neoan3-apps/transformer",
@@ -507,12 +515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "564f139ca640fbe1d3877e2964c543417bbe68be"
+                "reference": "cc8da73fa21f59ee57281bf591d223fe8971b98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/564f139ca640fbe1d3877e2964c543417bbe68be",
-                "reference": "564f139ca640fbe1d3877e2964c543417bbe68be",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/cc8da73fa21f59ee57281bf591d223fe8971b98e",
+                "reference": "cc8da73fa21f59ee57281bf591d223fe8971b98e",
                 "shasum": ""
             },
             "require": {
@@ -521,13 +529,9 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "doctrine/annotations": "1.2.*",
+                "doctrine/annotations": "^1.2",
                 "friendsofphp/php-cs-fixer": "^2.2",
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "^4.8 || ^5.7",
-                "zendframework/zend-eventmanager": "3.0.*",
-                "zendframework/zend-i18n": "2.7.3",
-                "zendframework/zend-serializer": "2.7.*"
+                "phpunit/phpunit": "^4.8 || ^5.7"
             },
             "suggest": {
                 "ext-mbstring": "Needed to send email in multibyte encoding charset",
@@ -565,7 +569,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2019-10-20T19:24:14+00:00"
+            "time": "2019-12-28T10:09:55+00:00"
         },
         {
             "name": "psr/http-message",
