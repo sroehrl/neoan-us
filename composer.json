@@ -14,7 +14,9 @@
         "neoan3-apps/hcaptcha": "dev-master",
         "phpmailer/phpmailer": "dev-master",
         "tmarois/filebase": "dev-master",
-        "blua-blue/blua-blue-php-sdk": "dev-master"
+        "blua-blue/blua-blue-php-sdk": "dev-master",
+        "neoan3-apps/template": "dev-master",
+        "league/commonmark": "^1.3@dev"
     },
     "license": "MIT",
     "authors": [
