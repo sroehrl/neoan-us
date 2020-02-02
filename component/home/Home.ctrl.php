@@ -11,41 +11,98 @@ class Home extends Unicore
 {
     private $gitHubActivity;
     private $totalGithubRepos;
+    private $feedback;
 
     function init()
     {
-        $this->uni('neoan3')->addHead('title','Experienced Web Development')
-//             ->callback($this, 'youTube')
+        $this->uni('neoan3')
+             ->addHead('title', 'Experienced Web Development')
              ->callback($this, 'gitHub')
+             ->callback($this, 'getFeedBack')
              ->hook('header', 'header')
              ->hook('main', 'home', [
                  'gitHub' => $this->gitHubActivity,
-                 'gitHubCount' => $this->totalGithubRepos
+                 'gitHubTotal' => $this->totalGithubRepos['total_count'],
+                 'gitHubRepos' => $this->totalGithubRepos['items'],
+                 'feedback' => $this->feedback
              ])
              ->output();
     }
 
     function gitHub(Neoan3 $uni)
     {
-        $filePath = path.'/component/home/github.json';
-        if(file_exists($filePath) && filemtime($filePath) > strtotime('2 hours ago')){
-            $info = json_decode(file_get_contents($filePath),true);
+        $filePath = path . '/component/home/github.json';
+        if (file_exists($filePath) && filemtime($filePath) > strtotime('2 hours ago')) {
+            $info = json_decode(file_get_contents($filePath), true);
             $this->gitHubActivity = $info['activity'];
             $this->totalGithubRepos = $info['total'];
         } else {
             $token = $uni->getCredentials('github');
             $repos = Curl::get('https://api.github.com/search/repositories', ['q' => 'user:sroehrl'], $token, 'token');
-            $this->totalGithubRepos = $repos['total_count'];
+            $this->totalGithubRepos = $repos;
             $this->gitHubActivity = Curl::get('https://api.github.com/users/sroehrl/events', [], $token, 'token');
             foreach ($this->gitHubActivity as $i => $activity) {
                 $this->gitHubActivity[$i]['created'] = substr($activity['created_at'], 0, 10);
             }
-            file_put_contents(path.'/component/home/github.json',json_encode(['activity'=>$this->gitHubActivity,'total'=>$this->totalGithubRepos]));
+            file_put_contents(path . '/component/home/github.json',
+                json_encode(['activity' => $this->gitHubActivity, 'total' => $this->totalGithubRepos]));
         }
-
 
 
     }
 
+    function getFeedback()
+    {
+        $this->feedback = [
+            [
+                'relation' => 'Peer',
+                'name'     => 'Bobby',
+                'pic' => 'bobby.png',
+                'comment'  => 'His years of experience may make him an incredible resource for good development, however it\'s his intellect and logical thinking that makes him a staunch defender of good design.'
+            ],
+            [
+                'relation' => 'Peer',
+                'name'     => 'Wade',
+                'pic' => 'wade.png',
+                'comment'  => 'Very systematic and professional.'
+            ],
+            [
+                'relation' => 'Manager',
+                'name'     => 'Jazmin',
+                'pic' => 'jazmin.jfif',
+                'comment'  => 'Called himself a genius. I was never able to prove him wrong.'
+            ],
+            [
+                'relation' => 'Customer',
+                'name'     => 'Ingrid',
+                'pic' => 'ingrid.jfif',
+                'comment'  => 'Saved us about 400k / year through automation. Thank you!'
+            ],
+            [
+                'relation' => 'Emplolyer',
+                'name'     => 'Harald',
+                'pic' => 'harald.jfif',
+                'comment'  => 'Yes, yes, yes. Would take him back in a heartbeat.'
+            ],
+            [
+                'relation' => 'Peer',
+                'name'     => 'Tom',
+                'pic' => 'tom.jfif',
+                'comment'  => 'I have never seen such accuracy and speed before.'
+            ],
+            [
+                'relation' => 'Peer',
+                'name'     => 'Sarah',
+                'pic' => 'sarah.jfif',
+                'comment'  => 'Has taught me more in 6 months than 4 years of school could.'
+            ],
+            [
+                'relation' => 'Stakeholder',
+                'name'     => 'Yumiko',
+                'pic' => 'yumiko.jfif',
+                'comment'  => 'Helped me make bold decisions which led to success.'
+            ],
+        ];
+    }
 
 }
