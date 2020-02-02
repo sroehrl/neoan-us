@@ -22,7 +22,7 @@ class Blog extends Unicore
     function loadContext(Neoan3 $uni){
         $credentials = getCredentials()['neoan_us_blua_blue'];
         $client = new Client($credentials['userName'], $credentials['password']);
-        $articles = $client->getArticleList(0,300,$credentials['userName']);
+        $articles = array_reverse($client->getArticleList(0,300,$credentials['userName']));
         // only published
         foreach ($articles as $article){
             if($article['publish_date']){
