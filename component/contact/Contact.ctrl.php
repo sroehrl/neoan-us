@@ -19,8 +19,10 @@ class Contact extends Neoan3
     function postContact(array $body)
     {
         $frame = new Neoan3();
-        $debug = true;
+//        $debug = true;
+        $debug = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false;
         $credentials = $frame->credentials['blua_mail'];
+
         Hcapture::setEnvironment($frame->credentials['neoan_us_hcaptcha']);
         try {
             $isHuman = Hcapture::isHuman($body);
@@ -45,6 +47,7 @@ class Contact extends Neoan3
                     $mail->isSMTP();
                     $mail->isHTML(true);
                     $mail->Host = $credentials['host'];
+                    $mail->CharSet = 'utf-8';
                     $mail->SMTPAuth = true;
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port = $credentials['port'];

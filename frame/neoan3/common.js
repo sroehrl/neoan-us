@@ -20,11 +20,11 @@ if(contactForm){
 
             }
         });
-
+        contactForm.style.display = 'none';
         axios.post('{{base}}api.v1/contact',body).then(res=>{
             alert('Thank you. I will get back to you as soon as possible.');
-            contactForm.style.display = 'none';
         }).catch(err=>{
+            contactForm.style.display = 'block';
             alert('ERROR: '+err.response.data.error)})
     });
 }
