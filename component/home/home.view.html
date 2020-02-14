@@ -97,8 +97,14 @@
                             <div class="field">
                                 <label for="msg" class="label">Your message</label>
                                 <div class="control">
-                                    <textarea name="message" id="msg" class="textarea" required></textarea>
+                                    <textarea name="message" id="msg" class="textarea" required style="min-height: 80px"></textarea>
                                 </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="tac" required>
+                                    I accept the <a href="{{base}}tac/" target="_blank">terms & conditions</a>
+                                </label>
                             </div>
                             <div class="h-captcha"  data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
                             <div class="control">

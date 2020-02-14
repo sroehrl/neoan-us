@@ -1,25 +1,44 @@
 <section class="section blog-page">
-    <h1 class="title">Blog</h1>
-    <h2 class="subtitle">I write on blua.blue, dev.to and groups.hyvor.com</h2>
-    <div n-for="articles as i => article" class="card">
-
-
-        <div class="card-content">
-
-            <p class="title">
-                {{article.name}}
-            </p>
-            <p class="subtitle">
-                {{article.teaser}}
-            </p>
-
+    <p class="title">Blog</p>
+    <p class="subtitle">I write on <a href="https://blua.blue" target="_blank">blua.blue</a>, <a target="_blank" href="https://dev.to/sroehrl">dev.to</a> and
+        <a href="https://groups.hyvor.com/@neoan" target="_blank">groups.hyvor.com</a></p>
+    <div class="columns">
+        <div class="column is-two-thirds">
+            <h1 class="title">{{featured.name}}</h1>
+            <div class="content">{{content}}</div>
         </div>
-        <footer class="card-footer">
-            <p class="card-footer-item">
-              <span>
-                Read on <a href="https://blua.blue/article/{{article.slug}}/" target="_blank">blua.blue</a>
-              </span>
-            </p>
-        </footer>
+        <div class="column is-one-third" >
+            <div class="card" n-for="articles as article">
+                <div class="card-image" n-if="article.has_image">
+                    <figure class="image is-4-by-3">
+                        <img src="https://blua.blue/{{article.image.path}}" alt="image">
+                    </figure>
+                </div>
+
+                <div class="card-content">
+
+                    <p class="title">
+                        {{article.name}}
+                    </p>
+                    <p class="subtitle">
+                        {{article.teaser}}
+                    </p>
+
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                      <span>
+                        Read <a href="{{base}}blog/{{article.slug}}/" >here</a>
+                      </span>
+                    </p>
+                    <p class="card-footer-item">
+                      <span>
+                        Read on <a href="https://blua.blue/article/{{article.slug}}/" target="_blank">blua.blue</a>
+                      </span>
+                    </p>
+                </footer>
+            </div>
+        </div>
     </div>
+
 </section>

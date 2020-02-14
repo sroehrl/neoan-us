@@ -1,0 +1,186 @@
+<section class="section tutoring-page">
+    <div class="columns">
+        <div class="column">
+            <article class="message">
+                <div class="message-header">
+                    <p>Existing students</p>
+                </div>
+                <div class="message-body">
+                    <form id="existing-student">
+                        <div class="field is-horizontal">
+                            <input aria-label="Existing student ID" class="input" type="text" name="student-code" placeholder="Student ID">
+                            <button class="button" style="margin-left: 4px">proceed</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+            <div class="card">
+                <div class="card-content has-background-grey-dark">
+                    <p class="title">How it works</p>
+                    <ol class="has-text-white-ter numbers">
+                        <li>You fill out the form</li>
+                        <li>We'll reach out</li>
+                        <li>We'll have a first session via Skype, MS Teams or Hangouts</li>
+
+                    </ol>
+
+                </div>
+            </div>
+            <article class="message">
+                <div class="message-header">
+                    <p>Apply for tutoring:</p>
+                </div>
+                <div class="message-body">
+
+                    <form id="contact-form">
+                        <div class="field">
+                            <label for="subject" class="label">Subject</label>
+                            <div class="select is-multiple control is-full" style="width: 100%">
+                                <select multiple required name="subject" id="subject" style="width: 100%">
+                                    <option value="php">PHP</option>
+                                    <option value="neoan3">neoan3</option>
+                                    <option value="css">CSS</option>
+                                    <option value="js">JavaScript</option>
+                                    <option value="html">HTML</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="email" class="label">Your email</label>
+                            <div class="control">
+                                <input type="email" class="input" name="email" id="email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="phone" class="label">Your mobile number (optional, texting only)</label>
+                            <div class="control">
+                                <input type="tel" class="input" name="phone" id="phone" >
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="github" class="label">Your GitHub profile (optional)</label>
+                            <div class="control">
+                                <input type="url" class="input" name="github" id="github" >
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Your name</label>
+                            <div class="control">
+                                <input type="text" class="input" name="name" id="name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="msg" class="label">Your motivation and a few words about your level.</label>
+                            <div class="control">
+                                <textarea name="message" id="msg" class="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox" name="tac" required>
+                                I accept the <a href="{{base}}tac/" target="_blank">terms & conditions</a>
+                            </label>
+                        </div>
+                        <div class="h-captcha"  data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
+                        <div class="control">
+                            <button class="button is-link" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+        <div class="column">
+            <h1 class="title">Need some help?</h1>
+            <div class="content">
+                <p class="has-text-white-ter">
+                    1-on1 & group <strong class="subtitle">web development tutoring in English or German</strong>.
+                    While my time is limited, I am interested in finding dedicated, motivated students.
+                </p>
+            </div>
+            <div class="card" style="margin-bottom: 14px;">
+                <div class="card-content has-background-success">
+                    <p class="subtitle">The "small-print"</p>
+                    <p>Sessions are between US <strong>$10</strong> and US <strong>$55</strong> depending on topic, level, group-size and location.</p>
+                    <p>Payment is accepted in advance via card or PayPal.</p>
+                    <p>Student information is kept offline. All online references are via an anonymous student ID.</p>
+
+                </div>
+            </div>
+            <div class="columns is-multiline">
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">PHP</p>
+                            <div class="content">
+                                <ul>
+                                    <li>native</li>
+                                    <li>neoan3</li>
+                                    <li>common frameworks</li>
+                                    <li>open source</li>
+                                    <li>OOP</li>
+                                    <li>MVC</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">JavaScript</p>
+                            <div class="content">
+                                <ul>
+                                    <li>browser</li>
+                                    <li>nodeJS</li>
+                                    <li>web components</li>
+                                    <li>common frameworks</li>
+                                    <li>common libraries</li>
+                                    <li>ECMA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">Productivity</p>
+                            <div class="content">
+                                <ul>
+                                    <li>GIT & GitHub</li>
+                                    <li>npm</li>
+                                    <li>terminal / bash</li>
+                                    <li>CI & Unit testing</li>
+                                    <li>package manager</li>
+                                    <li>preprocessors</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">Web Design</p>
+                            <div class="content">
+                                <ul>
+                                    <li>CSS (3)</li>
+                                    <li>HTML (5)</li>
+                                    <li>web frameworks</li>
+                                    <li>CSS frameworks</li>
+                                    <li>Reusability</li>
+                                    <li>UI & UX</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>

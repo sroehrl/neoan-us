@@ -4,6 +4,8 @@
 namespace Neoan3\Components;
 
 use BluaBlue\Client;
+use League\CommonMark\CommonMarkConverter;
+use Neoan3\Apps\Template;
 use Neoan3\Core\Unicore;
 use Neoan3\Frame\Neoan3;
 
@@ -11,27 +13,75 @@ class Blog extends Unicore
 {
     private $view = 'blog';
     private $articles = [];
+
     function init()
     {
         $this->uni('neoan3')
-             ->hook('header', 'header')
+            ->hook('header', 'header')
             ->callback($this, 'loadContext')
-             ->hook('main', $this->view, ['articles'=>$this->articles])
-             ->output();
+            ->callback($this, 'modernize')
+//            ->hook('main', $this->view, ['articles' => $this->articles])
+            ->output();
     }
-    function loadContext(Neoan3 $uni){
-        $credentials = getCredentials()['neoan_us_blua_blue'];
-        $client = new Client($credentials['userName'], $credentials['password']);
-        $articles = $client->getArticleList(0,300,$credentials['userName']);
-        // only published
-        foreach ($articles as $article){
-            if($article['publish_date']){
-                $article['has_image'] = false;
-                if($article['image_id']){
-                    $article['has_image'] = true;
-                }
-                $this->articles[] = $article;
+
+    function modernize(Neoan3 $context)
+    {
+        if (!$selected = sub(1)) {
+            $selected = $this->articles[0]['slug'];
+        }
+        $featured = $this->findArticle($selected);
+        $context->addHead('title', $featured['name']);
+        $converter = new CommonMarkConverter(
+            [
+                'html_input' => 'escape',
+            ]
+        );
+        $content = '';
+        foreach ($featured['content'] as $part) {
+            if ($part['content_type'] == 'markdown') {
+                $content .= $converter->convertToHtml($part['content']);
+            } else {
+                $content .= $part['content'];
             }
         }
+
+        $context->main = Template::embraceFromFile(
+            'component/blog/blog.view.html',
+            ['articles' => $this->articles, 'featured' => $featured, 'content' => $content, 'base' => base]
+        );
+    }
+
+    private function findArticle($slug)
+    {
+        foreach ($this->articles as $article) {
+            if ($article['slug'] == $slug) {
+                return $article;
+            }
+        }
+        return [];
+    }
+
+    function loadContext(Neoan3 $uni)
+    {
+        $store = __DIR__ . '/articles.json';
+        if(file_exists($store) && filemtime($store) < (time() - 60*60) ){
+            $this->articles = json_decode(file_get_contents($store),true);
+        } else {
+            $credentials = getCredentials()['neoan_us_blua_blue'];
+            $client = new Client($credentials['userName'], $credentials['password']);
+            $articles = array_reverse($client->getArticleList(0, 300, $credentials['userName']));
+            // only published
+            foreach ($articles as $article) {
+                if ($article['publish_date']) {
+                    $article['has_image'] = false;
+                    if ($article['image_id']) {
+                        $article['has_image'] = true;
+                    }
+                    $this->articles[] = $article;
+                }
+            }
+            file_put_contents($store, json_encode($this->articles));
+        }
+
     }
 }
