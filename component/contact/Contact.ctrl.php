@@ -19,7 +19,7 @@ class Contact extends Neoan3
     function postContact(array $body)
     {
         $frame = new Neoan3();
-        $debug = true;
+        $debug = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false;
         $credentials = $frame->credentials['blua_mail'];
         Hcapture::setEnvironment($frame->credentials['neoan_us_hcaptcha']);
         try {
