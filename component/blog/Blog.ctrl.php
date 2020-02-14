@@ -64,7 +64,7 @@ class Blog extends Unicore
     function loadContext(Neoan3 $uni)
     {
         $store = __DIR__ . '/articles.json';
-        if(file_exists($store) && filemtime($store) < (time() - 60*60) ){
+        if(file_exists($store) && filemtime($store) > (time() - 60*60) ){
             $this->articles = json_decode(file_get_contents($store),true);
         } else {
             $credentials = getCredentials()['neoan_us_blua_blue'];
