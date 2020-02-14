@@ -6,7 +6,7 @@
                     <p>Existing students</p>
                 </div>
                 <div class="message-body">
-                    <form >
+                    <form id="existing-student">
                         <div class="field is-horizontal">
                             <input aria-label="Existing student ID" class="input" type="text" name="student-code" placeholder="Student ID">
                             <button class="button">proceed</button>
@@ -14,9 +14,21 @@
                     </form>
                 </div>
             </article>
+            <div class="card">
+                <div class="card-content has-background-grey-dark">
+                    <p class="title">How it works</p>
+                    <ol class="has-text-white-ter numbers">
+                        <li>You fill out the form</li>
+                        <li>We'll reach out</li>
+                        <li>We'll have a first session via Skype, MS Teams or Hangouts</li>
+
+                    </ol>
+
+                </div>
+            </div>
             <article class="message">
                 <div class="message-header">
-                    <p>Apply for tutoring</p>
+                    <p>Apply for tutoring:</p>
                 </div>
                 <div class="message-body">
 
@@ -53,14 +65,14 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label for="msg" class="label">Your message (optional)</label>
+                            <label for="msg" class="label">Your motivation and a few words about your level.</label>
                             <div class="control">
                                 <textarea name="message" id="msg" class="textarea"></textarea>
                             </div>
                         </div>
                         <div class="field">
                             <label class="checkbox">
-                                <input type="checkbox" name="tac">
+                                <input type="checkbox" name="tac" required>
                                 I accept the <a href="{{base}}tac/">terms & conditions</a>
                             </label>
                         </div>
@@ -76,10 +88,18 @@
             <h1 class="title">Need some help?</h1>
             <div class="content">
                 <p class="has-text-white-ter">
-                    I am using multiple platforms to teach & tutor web development skills on the side in <strong class="subtitle">English or German</strong>.
+                    1-on1 & group web development tutoring in <strong class="subtitle">English or German</strong>.
                     While my time is limited, I am interested in finding dedicated, motivated students.
-
                 </p>
+            </div>
+            <div class="card" style="margin-bottom: 14px;">
+                <div class="card-content has-background-success">
+                    <p class="subtitle">The "small-print"</p>
+                    <p>Sessions are between US <strong>$10</strong> and US <strong>$55</strong> depending on topic, level, group-size and location.</p>
+                    <p>Payment is accepted in advance via card or PayPal.</p>
+                    <p>Student information is kept offline. All online references are via an anonymous student ID.</p>
+
+                </div>
             </div>
             <div class="columns is-multiline">
                 <div class="column is-half">

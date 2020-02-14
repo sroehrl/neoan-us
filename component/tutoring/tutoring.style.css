@@ -1,0 +1,7 @@
+.numbers{
+    padding-left: 14px;
+}
+.numbers li{
+    list-style-position: outside;
+    font-size: 120%;
+}
