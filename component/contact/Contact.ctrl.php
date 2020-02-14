@@ -44,7 +44,9 @@ class Contact extends Neoan3
                 // send email
                 $mail = new PHPMailer(true);
                 try {
-                    $mail->isSMTP();
+                    if(strpos('mail.blua.blue',$this->credentials['blua_mail']['host'])===false){
+                        $mail->isSMTP();
+                    }
                     $mail->isHTML(true);
                     $mail->Host = $credentials['host'];
                     $mail->CharSet = 'utf-8';
