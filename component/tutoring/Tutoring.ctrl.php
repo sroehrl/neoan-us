@@ -10,6 +10,7 @@ class Tutoring extends Unicore
     function init()
     {
         $this->uni('neoan3')
+            ->addHead('title', 'Learn web development')
             ->hook('header', 'header')
             ->hook('main', 'tutoring')
             ->output();
