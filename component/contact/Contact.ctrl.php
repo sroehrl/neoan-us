@@ -32,7 +32,7 @@ class Contact extends Neoan3
         try {
             if ($isHuman || $debug) {
                 $mailBody = $body['message'] . "<br>";
-                foreach (['subject', 'phone'] as $value) {
+                foreach (['subject', 'phone','github'] as $value) {
                     if (isset($body[$value])) {
                         $mailBody .= "<br><strong>$value</strong>: ";
                         $mailBody .= "<br>" . (is_array($body[$value]) ? implode(', ', $body[$value]) : $body[$value]);
