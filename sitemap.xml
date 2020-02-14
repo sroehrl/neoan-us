@@ -14,12 +14,18 @@
 
     <url>
 
+        <loc>https://neoan.us/tutoring/</loc>
+
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+
         <loc>https://neoan.us/blog/</loc>
 
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
-
 
     <url>
 
