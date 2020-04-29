@@ -9155,9 +9155,15 @@ label.panel-block:hover {
 }
 
 .limited-card {
-  max-height: 492px;
+  max-height: 615px;
   min-height: 401px;
   overflow-y: auto;
+  position: relative;
+}
+
+.calc-list {
+  height: 401px;
+  overflow: hidden auto;
 }
 
 .video-container {
@@ -9181,6 +9187,23 @@ label.panel-block:hover {
 }
 .logo-links a img {
   height: 50px;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 39, 186, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff27ba;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff00a6;
 }
 
 .tutoring-page {

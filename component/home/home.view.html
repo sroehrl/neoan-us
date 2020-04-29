@@ -1,8 +1,8 @@
 <section class="section main-teaser">
     <div class="container">
         <div class="columns">
-            <div class="column">
-                <div class="card limited-card has-background-dark">
+            <div class="column is-one-third-desktop">
+                <div class="card limited-card has-background-dark same-height">
                     <div class="card-content">
                         <h3 class="title">Where does my code run?</h3>
                         <div class="logo-links">
@@ -32,16 +32,71 @@
                 </div>
             </div>
             <div class="column">
-                <div class="card limited-card has-background-dark" style="overflow: hidden">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL5JRD-ivYK3E3Jt2eEgTIB37_lvsTzjJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="card limited-card has-background-dark has-text-primary same-height" style="overflow: hidden">
+                    <div class="card-content">
+                        <div class="tabs is-fullwidth">
+                            <ul class="tabs-menu">
+                                <li class="is-active" data-target="twitch"><a>Twitch</a></li>
+                                <li data-target="youtube"><a>Youtube</a></li>
+                                <li data-target="live-tab"><a>GitHub: Live activity</a></li>
+                                <li data-target="repo-tab"><a>GitHub: Repositories</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabs-content" id="twitch">
+                            <div class="video-container">
+                                <iframe src="https://player.twitch.tv/?channel=neoan3" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/neoan3?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Live-Video von neoan3 auf www.twitch.tv ansehen</a>
+                            </div>
+                        </div>
+                        <div class="tabs-content" id="youtube">
+                            <div class="video-container">
+                                <iframe width="600" height="340" src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=awoken1productions" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="tabs-content" id="live-tab"  >
+                            <div class="columns">
+                                <div class="column">
+                                    <p>Activity based on personal account</p>
+                                </div>
+                                <div class="column is-narrow">
+                                    <a class="button is-primary" target="_blank" href="https://github.com/sroehrl">GH Account</a>
+                                </div>
+                            </div>
+                            <ul class="calc-list" >
+                                <li n-for="gitHub as activity">
+                                    <div class="columns">
+                                        <div class="column">{{activity.type}}: </div>
+                                        <div class="column"><a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
+                                        <div class="column">{{activity.created}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabs-content" id="repo-tab">
+                            <div class="columns">
+                                <div class="column">
+                                    <p>{{gitHubTotal}} public repos</p>
+                                </div>
+                                <div class="column is-narrow">
+                                    <a class="button is-primary" target="_blank" href="https://github.com/sroehrl">GH Account</a>
+                                </div>
+                            </div>
+
+                            <ul class="calc-list">
+                                <li n-for="gitHubRepos as repo">
+                                    <div class="columns">
+                                        <div class="column"><a href="https://github.com/sroehrl/{{repo.name}}" target="_blank">{{repo.name}}</a></div>
+                                        <div class="column"><a href="{{repo.homepage}}" target="_blank">{{repo.homepage}}</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="columns">
 
-            <div class="column">
+            <!--<div class="column">
                 <div class="card limited-card has-background-dark has-text-primary">
                     <div class="card-content">
                         <h3 class="subtitle">GitHub <a href="https://github.com/sroehrl" class="button is-primary is-outlined is-pulled-right">profile</a></h3>
@@ -77,7 +132,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="column">
                 <div class="card limited-card has-background-warning">
                     <div class="card-content">
