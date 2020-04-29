@@ -19,6 +19,19 @@ $tabs-link-hover-color: #3273dc;
 @import "../../node_modules/bulma/bulma";
 @import "../../component/home/home";
 
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 39, 186, .1);
+}
+::-webkit-scrollbar-thumb {
+  background: $title-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $navbar-item-hover-color;
+}
 .tutoring-page{
   background-color: #000000;
   min-height: 100vh;

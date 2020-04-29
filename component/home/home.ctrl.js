@@ -16,11 +16,27 @@ const tabSystem = {
         });
     },
     toggle(targetId){
-        console.log(targetId);
         document.querySelectorAll('.tabs-content').forEach(contentElement=>{
             contentElement.style.display = contentElement.id === targetId ? 'block' : 'none';
             document.querySelector(`[data-target="${contentElement.id}"]`).classList[contentElement.id === targetId ? 'add' : 'remove']('is-active');
         })
     },
 };
+/* same height */
+let highest = 300;
+const sameHeightElements = document.querySelectorAll('.same-height');
+const calcList = document.querySelectorAll('.calc-list');
+sameHeightElements.forEach(element => {
+    console.log(element.clientHeight)
+    if(element.clientHeight>highest){
+
+        highest = element.clientHeight;
+    }
+})
+sameHeightElements.forEach(element => {
+    element.style.height = highest + 'px';
+})
+calcList.forEach(element => {
+    element.style.height = (highest - 160) + 'px';
+})
 tabSystem.init();
