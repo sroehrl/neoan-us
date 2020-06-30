@@ -3,6 +3,8 @@
 
 namespace Neoan3\Frame;
 
+use Neoan3\Apps\Db;
+use Neoan3\Apps\DbException;
 use Neoan3\Core\Serve;
 
 class Neoan3 extends Serve
@@ -14,6 +16,7 @@ class Neoan3 extends Serve
         parent::__construct();
         try {
             $this->credentials = getCredentials();
+            $this->setup();
         } catch (\Exception $e) {
             var_dump('credential error');
             die();
@@ -27,6 +30,19 @@ class Neoan3 extends Serve
         return $this->credentials['neoan_us'][$what];
     }
 
+    function setup()
+    {
+        /*
+         * database
+         *
+         * */
+        try{
+            Db::setEnvironment(getCredentials()['blua_db']);
+        } catch (DbException $e) {
+            var_dump('database error');
+            die();
+        }
+    }
     function constants()
     {
         return [
