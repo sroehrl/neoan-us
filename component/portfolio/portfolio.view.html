@@ -1,0 +1,79 @@
+<section class="section main-teaser">
+    <div class="container" x-data="component()">
+        <div class="columns is-multiline">
+            <template x-for="project in data.projects">
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-16x9">
+                                <img x-bind:src="project.img" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="content">
+                                <p x-text="project.desc"></p>
+                                <a x-bind:href="project.link" target="_blank">visit</a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </template>
+        </div>
+    </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+<script>
+    function component(){
+        return {
+            data:{
+                projects:[
+                    {
+                        name:'fileAway',
+                        desc:'Simple file-storage database (PHP)',
+                        img:'https://repository-images.githubusercontent.com/282278283/8f0d9a00-d598-11ea-84d5-bb17e071cd83',
+                        link:'https://github.com/sroehrl/fileAway'
+                    },{
+                        name:'Gaudiamus CSS',
+                        desc:'CSS Framework builder (SCSS)',
+                        img:'https://repository-images.githubusercontent.com/283393446/997c6380-d599-11ea-8c37-b491f15db26e',
+                        link:'https://gaudiamus-css.github.io'
+                    },{
+                        name:'neoan3',
+                        desc:'PHP all purpose framework',
+                        img:'https://repository-images.githubusercontent.com/161100992/fa586b80-d59a-11ea-8e68-8cd1f7f4568a',
+                        link:'https://neoan3.rocks'
+                    },{
+                        name:'fillr',
+                        desc:'Dynamic placeholder text generator',
+                        img:'https://repository-images.githubusercontent.com/210253976/3b9e4a80-d59e-11ea-9f4f-6947beeb82e7',
+                        link:'https://github.com/sroehrl/fillr'
+                    },{
+                        name:'blua.blue',
+                        desc:'Hybrid CMS (PHP/VueJS)',
+                        img:'https://repository-images.githubusercontent.com/192207243/75bc1c00-d59f-11ea-8309-bf0fc2b8e056',
+                        link:'https://blua.blue'
+                    },{
+                        name:'vast-n3',
+                        desc:'Hybrid App generator project',
+                        img:'https://repository-images.githubusercontent.com/235644515/a488c100-d5a4-11ea-8159-bb0d91283910',
+                        link:'https://github.com/vast-n3'
+                    },{
+                        name:'API "Scaffolder"',
+                        desc:'Quickly create, test, use a REST API',
+                        img:'https://repository-images.githubusercontent.com/282548360/b6b82e80-d5a7-11ea-9b3b-3300cb8abc65',
+                        link:'https://github.com/sroehrl/neoan3-demo-api'
+                    },{
+                        name:'blua.blue node SDK',
+                        desc:'NodeJS SDK for blua.blue',
+                        img:'https://repository-images.githubusercontent.com/192207243/75bc1c00-d59f-11ea-8309-bf0fc2b8e056',
+                        link:'https://github.com/blua-blue/blua-blue-node-sdk'
+                    },
+                ]
+            }
+        }
+    }
+</script>
