@@ -1,8 +1,9 @@
 <section class="section main-teaser">
     <div class="container" x-data="component()">
+        <h1 class="title">Open-Source Projects</h1>
         <div class="columns is-multiline">
             <template x-for="project in data.projects">
-                <div class="column is-one-quarter">
+                <div class="column is-one-third">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-16x9">
@@ -12,6 +13,7 @@
                         <div class="card-content">
 
                             <div class="content">
+                                <h3 x-text="project.name"></h3>
                                 <p x-text="project.desc"></p>
                                 <a x-bind:href="project.link" target="_blank">visit</a>
                                 <br>
@@ -81,6 +83,11 @@
                         desc:'PHP template engine',
                         img:'https://repository-images.githubusercontent.com/237791293/5d142c00-d5c8-11ea-8f1b-77e610f1ed39',
                         link:'https://github.com/sroehrl/neoan3-template'
+                    },{
+                        name:'neoan3-db',
+                        desc:'trusted PHP MySQL wrapper',
+                        img:'https://repository-images.githubusercontent.com/161001769/1c1e1680-d5cc-11ea-92bf-37f62d6e2b34',
+                        link:'https://github.com/sroehrl/neoan3-db'
                     },
                 ]
             }
