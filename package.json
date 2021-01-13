@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/sroehrl/neoan3#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "latest",
     "bulma": "^0.7.5"
   }
 }
