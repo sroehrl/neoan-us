@@ -1,94 +1,86 @@
 <section class="section main-teaser">
     <div class="container">
-        <div class="columns">
-            <div class="column is-one-third-desktop">
-                <div class="card limited-card has-background-dark same-height">
-                    <div class="card-content">
-                        <h3 class="title">Where does my code run?</h3>
-                        <div class="logo-links">
-                            <a href="https://www.pfizer.com/" target="_blank">
-                                <img src="{{base}}asset/pfizer.png" alt="Pfizer">
-                            </a>
-                            <a href="https://eagleproductivity.com" target="_blank">
-                                <img src="{{base}}asset/eagle.png" alt="Eagle Productivity" >
-                            </a>
-                            <a href="https://mcdonalds.com" target="_blank">
-                                <img src="{{base}}asset/mcd.png" alt="McDonald's" >
-                            </a>
-                            <a href="https://www.amgen.com/" target="_blank">
-                                <img src="{{base}}asset/amgen.svg" alt="AMGEN" >
-                            </a>
-                            <a href="https://bms.com" target="_blank">
-                                <img src="{{base}}asset/bms.svg" alt="Bristol-Myers Squibb">
-                            </a>
-                            <a href="https://www.delo-adhesives.com" target="_blank">
-                                <img src="{{base}}asset/delo.svg" alt="Delo adhesives">
-                            </a>
-                            <a href="https://akceatx.com" target="_blank" >
-                                <img src="{{base}}asset/logo_akcea-white.png" alt="Akcea Therapeutics">
-                            </a>
-                        </div>
-                    </div>
+        <div class="grid lg:grid-4-8">
+            <div class="card limited-card has-background-dark ">
+                <h3 class="text-primary font-lg">Where does my code run?</h3>
+                <div class="logo-links">
+                    <a href="https://www.pfizer.com/" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/pfizer.png" alt="Pfizer">
+                    </a>
+                    <a href="https://eagleproductivity.com" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/eagle.png" alt="Eagle Productivity">
+                    </a>
+                    <a href="https://mcdonalds.com" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/mcd.png" alt="McDonald's">
+                    </a>
+                    <a href="https://www.amgen.com/" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/amgen.svg" alt="AMGEN">
+                    </a>
+                    <a href="https://bms.com" target="_blank">
+                        <img class="w-100p" src="{{base}}asset/bms.svg" alt="Bristol-Myers Squibb">
+                    </a>
+                    <a href="https://www.delo-adhesives.com" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/delo.svg" alt="Delo adhesives">
+                    </a>
+                    <a href="https://akceatx.com" target="_blank">
+                        <img class="h-50px" src="{{base}}asset/logo_akcea-white.png" alt="Akcea Therapeutics">
+                    </a>
                 </div>
             </div>
-            <div class="column">
-                <div class="card limited-card has-background-dark has-text-primary same-height" style="overflow: hidden">
-                    <div class="card-content">
-                        <div class="tabs is-fullwidth">
-                            <ul class="tabs-menu">
-                                <li class="is-active" data-target="twitch"><a>Twitch</a></li>
-                                <li data-target="youtube"><a>Youtube</a></li>
-                                <li data-target="live-tab"><a>GitHub: Live activity</a></li>
-                                <li data-target="repo-tab"><a>GitHub: Repositories</a></li>
-                            </ul>
+            <div class="card limited-card has-background-dark has-text-primary " style="overflow: hidden">
+                <div class="card-content">
+                    <div class="d-flex tabs-menu m-b-2">
+                        <a href="#" class="button bg-accent" data-target="twitch">Twitch</a>
+                        <a href="#" class="button" data-target="youtube">Youtube</a>
+                        <a href="#" class="button" data-target="live-tab">GitHub: Live activity</a>
+                        <a href="#" class="button" data-target="repo-tab">OS Repositories</a>
+                    </div>
+                    <div class="tabs-content" id="twitch">
+                        <div class="video-container">
+                            <iframe src="https://player.twitch.tv/?channel=neoan3&parent=neoan.us" frameborder="0"
+                                    allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+                            <a href="https://www.twitch.tv/neoan3?tt_content=text_link&tt_medium=live_embed"
+                               style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Live-Video
+                                von neoan3 auf www.twitch.tv ansehen</a>
                         </div>
-                        <div class="tabs-content" id="twitch">
-                            <div class="video-container">
-                                <iframe src="https://player.twitch.tv/?channel=neoan3&parent=neoan.us" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/neoan3?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Live-Video von neoan3 auf www.twitch.tv ansehen</a>
-                            </div>
+                    </div>
+                    <div class="tabs-content" id="youtube">
+                        <div class="video-container">
+                            <iframe width="600" height="340"
+                                    src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=awoken1productions"
+                                    frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="tabs-content" id="youtube">
-                            <div class="video-container">
-                                <iframe width="600" height="340" src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=awoken1productions" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="tabs-content" id="live-tab"  >
-                            <div class="columns">
-                                <div class="column">
-                                    <p>Activity based on personal account</p>
-                                </div>
-                                <div class="column is-narrow">
-                                    <a class="button is-primary" target="_blank" href="https://github.com/sroehrl">GH Account</a>
-                                </div>
-                            </div>
-                            <ul class="calc-list" >
-                                <li n-for="gitHub as activity">
-                                    <div class="columns">
-                                        <div class="column">{{activity.type}}: </div>
-                                        <div class="column"><a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
-                                        <div class="column">{{activity.created}}</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tabs-content" id="repo-tab">
-                            <div class="columns">
-                                <div class="column">
-                                    <p>{{gitHubTotal}} public repos</p>
-                                </div>
-                                <div class="column is-narrow">
-                                    <a class="button is-primary" target="_blank" href="https://github.com/sroehrl">GH Account</a>
-                                </div>
+                    </div>
+                    <div class="tabs-content" id="live-tab">
+                        <div class="d-flex">
+                            <p class="f-1">Activity based on personal account</p>
+                            <div class="place-y-center">
+                                <a class="button " target="_blank" href="https://github.com/sroehrl">GH
+                                    Account
+                                </a>
                             </div>
 
-                            <ul class="calc-list">
-                                <li n-for="gitHubRepos as repo">
-                                    <div class="columns">
-                                        <div class="column"><a href="https://github.com/sroehrl/{{repo.name}}" target="_blank">{{repo.name}}</a></div>
-                                        <div class="column"><a href="{{repo.homepage}}" target="_blank">{{repo.homepage}}</a></div>
-                                    </div>
-                                </li>
-                            </ul>
+
+                        </div>
+                        <article>
+                            <div n-for="gitHub as activity">
+                                <div class="grid-4-6-2">
+                                    <div >{{activity.type}}:</div>
+                                    <div><a href="https://github.com/{{activity.repo.name}}"
+                                                           target="_blank">{{activity.repo.name}}</a></div>
+                                    <div >{{activity.created}}</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="tabs-content" id="repo-tab">
+                        <p>{{gitHubTotal}} public repos</p>
+
+                        <div n-for="gitHubRepos as repo" class="grid-6-6">
+                            <div class="column"><a href="https://github.com/sroehrl/{{repo.name}}"
+                                                   target="_blank">{{repo.name}}</a></div>
+                            <div class="column"><a href="{{repo.homepage}}"
+                                                   target="_blank">{{repo.homepage}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -96,52 +88,14 @@
         </div>
         <div class="columns">
 
-            <!--<div class="column">
-                <div class="card limited-card has-background-dark has-text-primary">
-                    <div class="card-content">
-                        <h3 class="subtitle">GitHub <a href="https://github.com/sroehrl" class="button is-primary is-outlined is-pulled-right">profile</a></h3>
 
-                        <div class="tabs is-fullwidth">
-                            <ul class="tabs-menu">
-                                <li class="is-active" data-target="live-tab"><a>Live activity</a></li>
-                                <li data-target="repo-tab"><a>Repositories</a></li>
-                            </ul>
-                        </div>
-                        <div class="tabs-content" id="live-tab">
-                            <ul>
-                                <li n-for="gitHub as activity">
-                                    <div class="columns">
-                                        <div class="column">{{activity.type}}: </div>
-                                        <div class="column"><a href="https://github.com/{{activity.repo.name}}" target="_blank">{{activity.repo.name}}</a></div>
-                                        <div class="column">{{activity.created}}</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tabs-content" id="repo-tab">
-                            <p>{{gitHubTotal}} public repos</p>
-                            <ul>
-                                <li n-for="gitHubRepos as repo">
-                                    <div class="columns">
-                                        <div class="column"><a href="https://github.com/sroehrl/{{repo.name}}" target="_blank">{{repo.name}}</a></div>
-                                        <div class="column">{{repo.homepage}}</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>-->
             <div class="column">
                 <div class="card limited-card has-background-warning">
                     <div class="card-content">
                         <form id="contact-form">
                             <div class="field">
                                 <label for="email" class="label">Your email</label>
-                                <div class="control">
-                                    <input type="email" class="input" name="email" id="email" required>
-                                </div>
+                                <input type="email" name="email" id="email" required>
                             </div>
                             <div class="field">
                                 <label for="name" class="label">Your name</label>
@@ -152,7 +106,8 @@
                             <div class="field">
                                 <label for="msg" class="label">Your message</label>
                                 <div class="control">
-                                    <textarea name="message" id="msg" class="textarea" required style="min-height: 80px"></textarea>
+                                    <textarea name="message" id="msg" class="textarea" required
+                                              style="min-height: 80px"></textarea>
                                 </div>
                             </div>
                             <div class="field">
@@ -161,9 +116,9 @@
                                     I accept the <a href="{{base}}tac/" target="_blank">terms & conditions</a>
                                 </label>
                             </div>
-                            <div class="h-captcha"  data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
+                            <div class="h-captcha" data-theme="dark" data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
                             <div class="control">
-                                <button class="button is-link" type="submit">Submit</button>
+                                <button class="button text-primary" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -174,20 +129,16 @@
 </section>
 <section class="section">
     <div class="container">
-        <h1 class="title">When asked to provide one single statement about my work...</h1>
-        <div n-for="feedback as comment" class="card reveal has-background-dark" style="margin-top: 12px;">
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-128x128">
-                            <img class="is-rounded" src="{{base}}asset/{{comment.pic}}" alt="{{comment.name}}">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <h3 class="title">{{comment.name}}</h3>
-                        <p class="subtitle">{{comment.relation}}</p>
-                        <p class="is-size-3 has-text-white">"{{comment.comment}}"</p>
-                    </div>
+        <h2 class="p-3 font-lg text-primary">When asked to provide one single statement about my work...</h2>
+        <div n-for="feedback as comment" class="card reveal">
+            <div class="grid-3-9">
+                <figure class="image is-128x128">
+                    <img class="w-100p round-img b-1 b-primary-75 raise-1-accent" src="{{base}}asset/{{comment.pic}}" alt="{{comment.name}}">
+                </figure>
+                <div class="media-content">
+                    <h3 class="title">{{comment.name}}</h3>
+                    <p class="subtitle">{{comment.relation}}</p>
+                    <p class="is-size-3 has-text-white">"{{comment.comment}}"</p>
                 </div>
 
             </div>

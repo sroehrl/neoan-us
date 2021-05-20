@@ -1,25 +1,19 @@
 <section class="section main-teaser">
     <div class="container" x-data="component()">
-        <h1 class="title">Open-Source Projects</h1>
-        <div class="columns is-multiline">
+        <h1 class="font-xl text-primary">Open-Source Projects</h1>
+        <div class="grid-4-4-4">
             <template x-for="project in data.projects">
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-16x9">
-                                <img x-bind:src="project.img" alt="Placeholder image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-
-                            <div class="content">
-                                <h3 x-text="project.name"></h3>
-                                <p x-text="project.desc"></p>
-                                <a x-bind:href="project.link" target="_blank">visit</a>
-                                <br>
-                            </div>
-                        </div>
+                <div class="card">
+                    <figure class="image is-16x9">
+                        <img class="w-100p" x-bind:src="project.img" alt="Placeholder image" />
+                    </figure>
+                    <div class="content">
+                        <h3 x-text="project.name"></h3>
+                        <p x-text="project.desc"></p>
+                        <a x-bind:href="project.link" target="_blank">visit</a>
+                        <br>
                     </div>
+
                 </div>
 
             </template>

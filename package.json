@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sroehrl/neoan3#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "bulma": "^0.7.5"
+    "bulma": "^0.7.5",
+    "gaudiamus-css": "^1.2.6"
   }
 }

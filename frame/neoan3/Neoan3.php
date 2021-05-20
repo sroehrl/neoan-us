@@ -37,7 +37,7 @@ class Neoan3 extends Serve
          *
          * */
         try{
-            Db::setEnvironment(getCredentials()['blua_db']);
+//            Db::setEnvironment(getCredentials()['blua_db']);
         } catch (DbException $e) {
             var_dump('database error');
             die();
@@ -59,7 +59,9 @@ class Neoan3 extends Serve
                 ['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1']
             ],
             'stylesheet' => [
-                '' . base . 'frame/neoan3/style.css',
+                '' . base . 'frame/neoan3/design.css',
+                'https://fonts.googleapis.com/css2?family=Nunito&display=swap',
+                'https://cdn.jsdelivr.net/npm/simple-line-icons@2.5.5/dist/styles/simple-line-icons.min.css'
             ],
             'js' => [
                 ['src' => base . 'node_modules/axios/dist/axios.min.js'],
