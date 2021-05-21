@@ -1,186 +1,153 @@
 <section class="section tutoring-page">
-    <div class="columns">
-        <div class="column">
-            <article class="message">
-                <div class="message-header">
-                    <p>Existing students</p>
+    <div class="container">
+        <div class="p-3">
+            <h1 class="font-xl text-primary">Tutoring / Consultation</h1>
+            <p>
+                1-on1 & group web development tutoring in English or German. While my time is limited, I am interested in finding dedicated, motivated students.
+            </p>
+        </div>
+
+        <div class="grid-6-6">
+            <div class="card-with-header">
+                <div class="bg-primary p-2">
+                    Need help?
                 </div>
-                <div class="message-body">
-                    <form id="existing-student">
-                        <div class="field is-horizontal">
-                            <input aria-label="Existing student ID" class="input" type="text" name="student-code" placeholder="Student ID">
-                            <button class="button" style="margin-left: 4px">proceed</button>
-                        </div>
-                    </form>
-                </div>
-            </article>
-            <div class="card">
-                <div class="card-content has-background-grey-dark">
+                <div class="p-3">
                     <p class="title">How it works</p>
                     <ol class="has-text-white-ter numbers">
                         <li>You fill out the form</li>
-                        <li>We'll reach out</li>
-                        <li>We'll have a first session via Skype, MS Teams or Hangouts</li>
+                        <li>I'll reach out</li>
+                        <li>We'll have a first session via Skype, MS Teams, Discord, Zoom, Google Meet or Hangouts</li>
 
                     </ol>
-
                 </div>
             </div>
-            <article class="message">
-                <div class="message-header">
-                    <p>Apply for tutoring:</p>
+            <div class="card-with-header">
+                <div class="bg-primary p-2">
+                    Existing students
                 </div>
-                <div class="message-body">
+                <form class="p-3" id="existing-student">
 
-                    <form id="contact-form">
-                        <div class="field">
-                            <label for="subject" class="label">Subject</label>
-                            <div class="select is-multiple control is-full" style="width: 100%">
-                                <select multiple required name="subject" id="subject" style="width: 100%">
-                                    <option value="php">PHP</option>
-                                    <option value="neoan3">neoan3</option>
-                                    <option value="css">CSS</option>
-                                    <option value="js">JavaScript</option>
-                                    <option value="html">HTML</option>
-                                </select>
-
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="email" class="label">Your email</label>
-                            <div class="control">
-                                <input type="email" class="input" name="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="phone" class="label">Your mobile number (optional, texting only)</label>
-                            <div class="control">
-                                <input type="tel" class="input" name="phone" id="phone" >
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="github" class="label">Your GitHub profile (optional)</label>
-                            <div class="control">
-                                <input type="url" class="input" name="github" id="github" >
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="name" class="label">Your name</label>
-                            <div class="control">
-                                <input type="text" class="input" name="name" id="name">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label for="msg" class="label">Your motivation and a few words about your level.</label>
-                            <div class="control">
-                                <textarea name="message" id="msg" class="textarea"></textarea>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="checkbox">
-                                <input type="checkbox" name="tac" required>
-                                I accept the <a href="{{base}}tac/" target="_blank">terms & conditions</a>
-                            </label>
-                        </div>
-                        <div class="h-captcha"  data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
-                        <div class="control">
-                            <button class="button is-link" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </article>
+                    <div class="d-flex">
+                        <input aria-label="Existing student ID" class="input" type="text" name="student-code" placeholder="Student ID">
+                        <button type="submit" class="button text-white" >proceed</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="column">
-            <h1 class="title">Need some help?</h1>
-            <div class="content">
-                <p class="has-text-white-ter">
-                    1-on1 & group <strong class="subtitle">web development tutoring in English or German</strong>.
-                    While my time is limited, I am interested in finding dedicated, motivated students.
-                </p>
+
+        <article class="card-with-header">
+            <div class="bg-accent p-3">
+                <p class="font-lg">Get started:</p>
             </div>
-            <div class="card" style="margin-bottom: 14px;">
-                <div class="card-content has-background-success">
-                    <p class="subtitle">The "small-print"</p>
-                    <p>Sessions are between US <strong>$10</strong> and US <strong>$55</strong> depending on topic, level, group-size and location.</p>
-                    <p>Payment is accepted in advance via card or PayPal.</p>
-                    <p>Student information is kept offline. All online references are via an anonymous student ID.</p>
+            <div class="p-3">
 
-                </div>
+                <form id="contact-form">
+                    <div class="m-t-3">
+                        <label for="subject" class="label">Subject</label>
+                        <div class="select is-multiple control is-full" >
+                            <select multiple required name="subject" id="subject" >
+                                <option value="php">PHP</option>
+                                <option value="neoan3">neoan3</option>
+                                <option value="css">CSS</option>
+                                <option value="js">JavaScript</option>
+                                <option value="html">HTML</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="m-t-3">
+                        <label for="email" class="label">Your email</label>
+                        <div class="control">
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="m-t-3">
+                        <label for="phone" class="label">Your mobile number (optional, texting only)</label>
+                        <div class="control">
+                            <input type="tel" class="input" name="phone" id="phone" >
+                        </div>
+                    </div>
+                    <div class="m-t-3">
+                        <label for="github" class="label">Your GitHub profile (optional)</label>
+                        <div class="control">
+                            <input type="url" class="input" name="github" id="github" >
+                        </div>
+                    </div>
+                    <div class="m-t-3">
+                        <label for="name" class="label">Your name</label>
+                        <div class="control">
+                            <input type="text" class="input" name="name" id="name">
+                        </div>
+                    </div>
+                    <div class="m-t-3">
+                        <label for="msg" class="label">Your motivation and a few words about your level.</label>
+                        <div class="control">
+                            <textarea name="message" id="msg" class="textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="m-y-3">
+                        <label class="checkbox">
+                            <input type="checkbox" name="tac" required>
+                            I accept the <a href="{{base}}tac/" target="_blank">terms & conditions</a>
+                        </label>
+                    </div>
+                    <div class="h-captcha" data-theme="dark" data-sitekey="d64972ea-2f6f-41ae-9315-4022424707db"></div>
+                    <div class="control">
+                        <button class="button text-primary font-md b-primary" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-            <div class="columns is-multiline">
-                <div class="column is-half">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">PHP</p>
-                            <div class="content">
-                                <ul>
-                                    <li>native</li>
-                                    <li>neoan3</li>
-                                    <li>common frameworks</li>
-                                    <li>open source</li>
-                                    <li>OOP</li>
-                                    <li>MVC</li>
-                                </ul>
-                            </div>
+        </article>
+        <h2 class="font-lg text-primary p-3">A few possible topics...</h2>
+        <div class="grid-6-6" x-data="topics()">
+            <template x-for="topic in topics">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="title" x-text="topic.title">PHP</p>
+                        <div class="content">
+                            <ul>
+                                <template x-for="sub in topic.subs">
+                                    <li x-text="sub">native</li>
+                                </template>
+                            </ul>
+                        </div>
 
-                        </div>
                     </div>
                 </div>
-                <div class="column is-half">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">JavaScript</p>
-                            <div class="content">
-                                <ul>
-                                    <li>browser</li>
-                                    <li>nodeJS</li>
-                                    <li>web components</li>
-                                    <li>common frameworks</li>
-                                    <li>common libraries</li>
-                                    <li>ECMA</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-half">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">Productivity</p>
-                            <div class="content">
-                                <ul>
-                                    <li>GIT & GitHub</li>
-                                    <li>npm</li>
-                                    <li>terminal / bash</li>
-                                    <li>CI & Unit testing</li>
-                                    <li>package manager</li>
-                                    <li>preprocessors</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-half">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title">Web Design</p>
-                            <div class="content">
-                                <ul>
-                                    <li>CSS (3)</li>
-                                    <li>HTML (5)</li>
-                                    <li>web frameworks</li>
-                                    <li>CSS frameworks</li>
-                                    <li>Reusability</li>
-                                    <li>UI & UX</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            </template>
+        </div>
+        <div class="p-3">
+            <p class="subtitle">The "small-print"</p>
+            <p>Sessions are between US <strong>$60</strong> and US <strong>$130</strong> depending on topic, level, group-size and location.</p>
+            <p>Payment is accepted in advance via card or PayPal.</p>
+            <p>Student information is kept offline. All online references are via an anonymous student ID.</p>
         </div>
     </div>
-
 </section>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+<script>
+    function topics(){
+        return {
+            topics: [
+                {
+                    title: 'PHP',
+                    subs: ['vanilla','neoan3','common frameworks', 'OOP', 'MVC']
+                },
+                {
+                    title: 'JavaScript',
+                    subs: ['browser','nodeJS','web components', 'vue', 'react', 'common libraries']
+                },
+                {
+                    title: 'Productivity',
+                    subs: ['GIT & GitHub','npm','terminal / bash', 'CI & Unit testing', 'preprocessors']
+                },
+                {
+                    title: 'Web Design',
+                    subs: ['CSS (3)','HTML (5)','web frameworks', 'CSS frameworks', 'Reusability','UI & UX']
+                },
+
+            ]
+        }
+    }
+</script>

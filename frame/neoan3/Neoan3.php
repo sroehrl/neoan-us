@@ -37,7 +37,7 @@ class Neoan3 extends Serve
          *
          * */
         try{
-//            Db::setEnvironment(getCredentials()['blua_db']);
+            Db::setEnvironment(getCredentials()['blua_db']);
         } catch (DbException $e) {
             var_dump('database error');
             die();

@@ -4,6 +4,7 @@ html,body{
   font-family: 'Nunito', sans-serif;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
+
 header{
   width: 100%;
 }
@@ -46,7 +47,11 @@ a{
 
 }
 .card{
-  @extend .b-1, .b-primary, .b-rounded, .m-2, .p-3, .raise-2-accent;
+  @extend .b-1, .b-primary, .p-3, .b-rounded, .m-2, .raise-2-accent;
+}
+.card-with-header{
+  @extend .b-1, .b-primary, .b-rounded, .m-2, .raise-2-accent;
+
 }
 .video-container {
   position: relative;
@@ -63,9 +68,29 @@ a{
   }
 
 }
-input:not([type="checkbox"]), textarea{
+input:not([type="checkbox"]), textarea, select{
   @extend .p-2, .bg-accent-50, .b-0, .b-rounded-2, .focus\:raise-1-primary, .text-white, .font-strong, .w-90p;
+}
+select{
+  width: calc(90% + 12px);
 }
 .round-img{
   border-radius: 50%;
+}
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 39, 186, .1);
+}
+::-webkit-scrollbar-thumb {
+  background: $primaryColor;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $accentColor;
+}
+.tabs-content{
+  overflow-y: auto;
+  max-height: 500px;
 }
