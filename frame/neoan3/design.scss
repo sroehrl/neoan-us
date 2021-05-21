@@ -2,14 +2,14 @@ html,body{
   padding:0;
   margin:0;
   font-family: 'Nunito', sans-serif;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 20%, #090a0f 100%);
 }
 
 header{
   width: 100%;
 }
 section{
-  margin-top: 80px;
+  margin-top: 100px;
 }
 $accentColor:#1b2735;
 $display-map:("hidden":"none", "flex":"flex", "block":"block", "inline":"inline");
@@ -47,6 +47,8 @@ a{
 
 }
 .card{
+  background-color: rgba(255, 255, 255, .05);
+  backdrop-filter: blur(5px);
   @extend .b-1, .b-primary, .p-3, .b-rounded, .m-2, .raise-2-accent;
 }
 .card-with-header{
