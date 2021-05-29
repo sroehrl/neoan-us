@@ -15,7 +15,7 @@ class MessageModel extends IndexModel
 
     static function unread()
     {
-        return Db::easy('message.*', ['^delete_date']);
+        return Db::easy('message.*', ['^delete_date','is_read'=>0]);
     }
     static function create($message)
     {

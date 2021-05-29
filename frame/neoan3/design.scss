@@ -1,6 +1,6 @@
+@import "variables";
 html,body{
-  padding:0;
-  margin:0;
+
   font-family: 'Nunito', sans-serif;
   background: radial-gradient(ellipse at bottom, #1b2735 20%, #090a0f 100%);
 }
@@ -11,10 +11,11 @@ header{
 section{
   margin-top: 100px;
 }
-$accentColor:#1b2735;
-$display-map:("hidden":"none", "flex":"flex", "block":"block", "inline":"inline");
-$height-width-unit-map:("p":"%","px":"px");
 @import "../../node_modules/gaudiamus-css/scss";
+.b-shine{
+  border-image-slice: 1;
+  border-image-source: $gradient;
+}
 
 body{
   @extend .text-white;
@@ -24,7 +25,7 @@ a{
   @extend .text-decoration-none, .text-primary;
 }
 .button{
-  @extend .bg-transparent, .b-0, .b-1, .b-rounded-3, .b-transparent, .p-x-2, .hover\:bg-primary-75, .hover\:text-white;
+  @extend .bg-black-50, .b-0, .b-l-1, .b-t-1, .b-r-1, .b-rounded, .b-primary, .p-x-2, .hover\:bg-primary-75, .hover\:text-white, .hover\:raise-2-accent;
 }
 // menu
 

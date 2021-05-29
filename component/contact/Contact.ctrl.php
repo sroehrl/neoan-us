@@ -34,21 +34,21 @@ class Contact extends Neoan3
 
         try {
             if ($isHuman || $debug) {
-                $mailBody = $body['message'] . "<br>";
+                $mailBody = $body['message'] . "Note:<br>";
                 foreach (['subject', 'phone','github','name'] as $value) {
                     if (isset($body[$value])) {
                         $mailBody .= "<br><strong>$value</strong>: ";
                         $mailBody .= "<br>" . (is_array($body[$value]) ? implode(', ', $body[$value]) : $body[$value]);
                     }
                 }
-                MessageModel::create([
+                $c = MessageModel::create([
                     'subject' => 'Online form',
                     'sent_from' => $body['email'],
-                    'content' => $mailBody
+                    'content' => '=' . $mailBody
                 ]);
 
                 // send email
-                $mail = new PHPMailer(true);
+               /* $mail = new PHPMailer(true);
                 try {
                     if(strpos('mail.blua.blue',$this->credentials['blua_mail']['host'])===false){
                         $mail->isSMTP();
@@ -70,7 +70,7 @@ class Contact extends Neoan3
                 } catch (Exception $e) {
                     var_dump($e->getMessage());
                     die();
-                }
+                }*/
             } else {
                 throw new RouteException('bot', 401);
             }

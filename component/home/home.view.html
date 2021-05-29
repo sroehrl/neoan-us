@@ -29,7 +29,7 @@
             </div>
             <div class="card limited-card has-background-dark has-text-primary " style="overflow: hidden">
                 <div class="card-content">
-                    <div class="d-flex tabs-menu m-b-2">
+                    <div class="d-flex tabs-menu m-b-2" style="justify-content: space-between">
                         <a href="#" class="button bg-accent" data-target="twitch">Twitch</a>
                         <a href="#" class="button" data-target="youtube">Youtube</a>
                         <a href="#" class="button" data-target="live-tab">GitHub: Live activity</a>
@@ -131,8 +131,8 @@
     <div class="container">
         <h2 class="p-3 font-lg text-primary">When asked to provide one single statement about my work...</h2>
         <div n-for="feedback as comment" class="card reveal">
-            <div class="grid-3-9">
-                <figure class="image is-128x128">
+            <div class="grid-3-9 md:grid-2-10">
+                <figure class="image m-0 m-r-3">
                     <img class="w-100p round-img b-1 b-primary-75 raise-1-accent" src="{{base}}asset/{{comment.pic}}" alt="{{comment.name}}">
                 </figure>
                 <div class="media-content">
