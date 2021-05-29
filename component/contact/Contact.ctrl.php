@@ -6,6 +6,7 @@ namespace Neoan3\Components;
 use Neoan3\Apps\Hcapture;
 use Neoan3\Core\RouteException;
 use Neoan3\Frame\Neoan3;
+use Neoan3\Model\MessageModel;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -33,16 +34,21 @@ class Contact extends Neoan3
 
         try {
             if ($isHuman || $debug) {
-                $mailBody = $body['message'] . "<br>";
-                foreach (['subject', 'phone','github'] as $value) {
+                $mailBody = $body['message'] . "Note:<br>";
+                foreach (['subject', 'phone','github','name'] as $value) {
                     if (isset($body[$value])) {
                         $mailBody .= "<br><strong>$value</strong>: ";
                         $mailBody .= "<br>" . (is_array($body[$value]) ? implode(', ', $body[$value]) : $body[$value]);
                     }
                 }
+                $c = MessageModel::create([
+                    'subject' => 'Online form',
+                    'sent_from' => $body['email'],
+                    'content' => '=' . $mailBody
+                ]);
 
                 // send email
-                $mail = new PHPMailer(true);
+               /* $mail = new PHPMailer(true);
                 try {
                     if(strpos('mail.blua.blue',$this->credentials['blua_mail']['host'])===false){
                         $mail->isSMTP();
@@ -64,7 +70,7 @@ class Contact extends Neoan3
                 } catch (Exception $e) {
                     var_dump($e->getMessage());
                     die();
-                }
+                }*/
             } else {
                 throw new RouteException('bot', 401);
             }

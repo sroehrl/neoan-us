@@ -19,7 +19,7 @@ class Home extends Unicore
              ->addHead('title', 'Experienced Web Development')
              ->callback($this, 'gitHub')
              ->callback($this, 'getFeedBack')
-             ->hook('header', 'header')
+             ->hook('footer', 'header')
              ->hook('main', 'home', [
                  'gitHub' => $this->gitHubActivity,
                  'gitHubTotal' => $this->totalGithubRepos['total_count'],

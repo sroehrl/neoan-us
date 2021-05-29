@@ -17,7 +17,7 @@ class Blog extends Unicore
     function init()
     {
         $this->uni('neoan3')
-            ->hook('header', 'header')
+            ->hook('footer', 'header')
             ->callback($this, 'loadContext')
             ->callback($this, 'modernize')
 //            ->hook('main', $this->view, ['articles' => $this->articles])
