@@ -22,7 +22,11 @@ class Neoan3 extends Serve
             die();
         }
 
+        $this->includeElement('gdpr', ['trackingId'=>'UA-70663274-4']);
+        if(strpos($_SERVER['REQUEST_URI'],'tac') === false){
 
+            $this->footer .= '<gdpr-consent></gdpr-consent>';
+        }
     }
 
     function getCredentials($what)

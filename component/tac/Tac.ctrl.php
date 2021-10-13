@@ -9,7 +9,7 @@ class Tac extends Unicore
 {
     function init()
     {
-        $this->uni('neoan3')->addHead('title', 'Terms, conditions, privacy')->hook('header', 'header')->hook(
+        $this->uni('neoan3')->addHead('title', 'Terms, conditions, privacy')->hook('footer', 'header')->hook(
             'main',
             'tac'
         )->output();
