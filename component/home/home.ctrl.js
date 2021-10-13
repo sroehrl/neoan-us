@@ -40,4 +40,16 @@ sameHeightElements.forEach(element => {
 calcList.forEach(element => {
     element.style.height = (highest - 160) + 'px';
 })
-tabSystem.init();
+// tabSystem.init();
+
+/* GDPR consent */
+const tabsTemplate = document.getElementById('hidden-tabs');
+const tabsContainer = document.getElementById('tabs-container');
+const checker = setInterval(()=>{
+    if(localStorage.gdprAccepted){
+        clearInterval(checker);
+        tabsContainer.innerHTML = '';
+        tabsContainer.appendChild(tabsTemplate.content);
+        tabSystem.init()
+    }
+},500)
