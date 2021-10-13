@@ -15,6 +15,11 @@ export class GDPR extends HTMLElement {
         template.querySelector('#accept-gdpr-button').addEventListener('click', ev => {
             localStorage.gdprAccepted = true;
             this.shadowRoot.innerHTML = '';
+            this.attachGoogle();
+        })
+        const userDeclinedElement = template.querySelector('#gdpr-declined');
+        template.querySelector('#decline-gdpr-button').addEventListener('click', ev => {
+            userDeclinedElement.style.display = 'block';
         })
         this.shadowRoot.appendChild(template);
     }
