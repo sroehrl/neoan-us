@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blua-blue/blua-blue-php-sdk.git",
-                "reference": "0022db54e7fe92e2218ee5648de4bc7dafcda337"
+                "reference": "ffeeaebdc20fefc5e8ac4b3473f05e2bb5c503e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blua-blue/blua-blue-php-sdk/zipball/0022db54e7fe92e2218ee5648de4bc7dafcda337",
-                "reference": "0022db54e7fe92e2218ee5648de4bc7dafcda337",
+                "url": "https://api.github.com/repos/blua-blue/blua-blue-php-sdk/zipball/ffeeaebdc20fefc5e8ac4b3473f05e2bb5c503e9",
+                "reference": "ffeeaebdc20fefc5e8ac4b3473f05e2bb5c503e9",
                 "shasum": ""
             },
             "require": {
@@ -47,9 +47,9 @@
             "description": "PHP SDK for blua.blue",
             "support": {
                 "issues": "https://github.com/blua-blue/blua-blue-php-sdk/issues",
-                "source": "https://github.com/blua-blue/blua-blue-php-sdk/tree/v2.0.0"
+                "source": "https://github.com/blua-blue/blua-blue-php-sdk/tree/v2.0.3"
             },
-            "time": "2021-11-01T22:07:54+00:00"
+            "time": "2021-11-04T23:40:02+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -459,12 +459,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "796a3dcbfae8cb6e6a41de492517f7a3cdf572f0"
+                "reference": "e3c3ec59f5a276b437b50e0651f0c93a04e31330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/796a3dcbfae8cb6e6a41de492517f7a3cdf572f0",
-                "reference": "796a3dcbfae8cb6e6a41de492517f7a3cdf572f0",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/e3c3ec59f5a276b437b50e0651f0c93a04e31330",
+                "reference": "e3c3ec59f5a276b437b50e0651f0c93a04e31330",
                 "shasum": ""
             },
             "require": {
@@ -483,7 +483,7 @@
                 "ext-json": "*",
                 "github/gfm": "0.29.0",
                 "michelf/php-markdown": "^1.4",
-                "phpstan/phpstan": "^0.12.88",
+                "phpstan/phpstan": "^0.12.88 || ^1.0.0",
                 "phpunit/phpunit": "^9.5.5",
                 "scrutinizer/ocular": "^1.8.1",
                 "symfony/finder": "^5.3",
@@ -555,7 +555,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-15T22:57:09+00:00"
+            "time": "2021-11-06T06:02:22+00:00"
         },
         {
             "name": "league/config",

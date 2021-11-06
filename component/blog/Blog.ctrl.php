@@ -42,9 +42,9 @@ class Blog extends Unicore
         $content = '';
         foreach ($featured['article_content'] as $part) {
             if ($part['content_type'] == 'markdown') {
-                $content .= $converter->convertToHtml($part['content']);
+                $content .= $converter->convertToHtml($part['content'])->getContent();
             } else {
-                $content .= $part['content'];
+                $content .= $part['html'];
             }
         }
 
@@ -72,14 +72,26 @@ class Blog extends Unicore
         } else {
             $credentials = getCredentials()['neoan_us_blua_blue'];
 
-            $client = new Client($credentials['public'], $credentials['private'],'http://localhost:8080');
+
+            $client = new Client($credentials['public'], $credentials['private']);
             $client->authenticate();
             $articles = $client->getOwnArticles();
+
+            uasort($articles, fn($a,$b)=> strtotime($a->getInsertDate()) < strtotime($b->getInsertDate()) ? 1 : -1);
+            $images = $client->getImages();
             // only published
             foreach ($articles as $article) {
                 if ($article->getPublishDate()) {
                     $store = $article->toArray();
                     $store['has_image'] = !!$article->getImageId();
+                    if($article->getImageId()){
+                        foreach ($images as $image){
+                            if($image->getId() === $article->getImageId()){
+                                $store['image'] = $image->toArray();
+                            }
+                        }
+
+                    }
 
                     $this->articles[] = $store;
                 }
