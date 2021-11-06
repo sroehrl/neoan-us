@@ -5,6 +5,10 @@ namespace Neoan3\Components;
 
 use BluaBlue\Client;
 use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\Table\TableExtension;
+use League\CommonMark\MarkdownConverter;
 use Neoan3\Apps\Template;
 use Neoan3\Core\Unicore;
 use Neoan3\Frame\Neoan3;
@@ -31,17 +35,16 @@ class Blog extends Unicore
         }
         $featured = $this->findArticle($selected);
         $context->addHead('title', $featured['name']);
-        $converter = new CommonMarkConverter(
-            [
-                'html_input' => 'escape',
-            ]
-        );
+        $environment = new Environment(['html_input' => 'escape']);
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addExtension(new TableExtension());
+        $converter = new MarkdownConverter($environment);
         $content = '';
-        foreach ($featured['content'] as $part) {
+        foreach ($featured['article_content'] as $part) {
             if ($part['content_type'] == 'markdown') {
-                $content .= $converter->convertToHtml($part['content']);
+                $content .= $converter->convertToHtml($part['content'])->getContent();
             } else {
-                $content .= $part['content'];
+                $content .= $part['html'];
             }
         }
 
@@ -63,24 +66,37 @@ class Blog extends Unicore
 
     function loadContext(Neoan3 $uni)
     {
-        $store = __DIR__ . '/articles.json';
-        if(file_exists($store) && filemtime($store) > (time() - 60*60) ){
-            $this->articles = json_decode(file_get_contents($store),true);
+        $storeLocation = __DIR__ . '/articles.json';
+        if(file_exists($storeLocation) && filemtime($storeLocation) > (time() - 60*60) ){
+            $this->articles = json_decode(file_get_contents($storeLocation),true);
         } else {
             $credentials = getCredentials()['neoan_us_blua_blue'];
-            $client = new Client($credentials['userName'], $credentials['password']);
-            $articles = array_reverse($client->getArticleList(0, 300, $credentials['userName']));
+
+
+            $client = new Client($credentials['public'], $credentials['private']);
+            $client->authenticate();
+            $articles = $client->getOwnArticles();
+
+            uasort($articles, fn($a,$b)=> strtotime($a->getInsertDate()) < strtotime($b->getInsertDate()) ? 1 : -1);
+            $images = $client->getImages();
             // only published
             foreach ($articles as $article) {
-                if ($article['publish_date']) {
-                    $article['has_image'] = false;
-                    if ($article['image_id']) {
-                        $article['has_image'] = true;
+                if ($article->getPublishDate()) {
+                    $store = $article->toArray();
+                    $store['has_image'] = !!$article->getImageId();
+                    if($article->getImageId()){
+                        foreach ($images as $image){
+                            if($image->getId() === $article->getImageId()){
+                                $store['image'] = $image->toArray();
+                            }
+                        }
+
                     }
-                    $this->articles[] = $article;
+
+                    $this->articles[] = $store;
                 }
             }
-            file_put_contents($store, json_encode($this->articles));
+            file_put_contents($storeLocation, json_encode($this->articles));
         }
 
     }
