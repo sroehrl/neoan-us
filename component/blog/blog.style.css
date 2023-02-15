@@ -1,29 +1,3 @@
-.blog-page{
-    background-color: #000000;
-    min-height: 100vh;
-    padding-top: 20vh;
-}
-.card{
-    margin-top: 7px;
-}
-pre{
-    background-color: #3f3f3f;
-}
-
-pre code{
-
-    color: white;
-}
-code{
-    background-color: #ff27ba;
-    color: black;
-}
-.content{
-    color: #e6ebeb;
-}
-.content h2,h3,h4{
-    color: #3273dc;
-}
-.content strong{
-    color: #e6ebeb;
+.content img{
+    max-width: 100%;
 }

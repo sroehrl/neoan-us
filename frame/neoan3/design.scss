@@ -1,0 +1,99 @@
+@import "variables";
+html,body{
+
+  font-family: 'Nunito', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 20%, #090a0f 100%);
+}
+
+header{
+  width: 100%;
+}
+section{
+  margin-top: 100px;
+}
+@import "../../node_modules/gaudiamus-css/scss";
+.b-shine{
+  border-image-slice: 1;
+  border-image-source: $gradient;
+}
+
+body{
+  @extend .text-white;
+}
+
+a{
+  @extend .text-decoration-none, .text-primary;
+}
+.button{
+  @extend .bg-black-50, .b-0, .b-l-1, .b-t-1, .b-r-1, .b-rounded, .b-primary, .p-x-2, .hover\:bg-primary-75, .hover\:text-white, .hover\:raise-2-accent;
+}
+// menu
+
+.navbar-menu{
+  display: none;
+  @extend .d-block, .lg\:d-flex;
+}
+.navbar-menu.is-active{
+  display: block;
+}
+.navbar-end a{
+    @extend .m-t-3, .lg\:m-t-0, .d-block, .lg\:d-inline;
+
+}
+@media (min-width:1024px) {
+  .navbar-burger{
+    display: none;
+  }
+
+
+}
+.card{
+  background-color: rgba(255, 255, 255, .05);
+  backdrop-filter: blur(5px);
+  @extend .b-1, .b-primary, .p-3, .b-rounded, .m-2, .raise-2-accent;
+}
+.card-with-header{
+  @extend .b-1, .b-primary, .b-rounded, .m-2, .raise-2-accent;
+
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden ;
+  iframe, object, embed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+input:not([type="checkbox"]), textarea, select{
+  @extend .p-2, .bg-accent-50, .b-0, .b-rounded-2, .focus\:raise-1-primary, .text-white, .font-strong, .w-90p;
+}
+select{
+  width: calc(90% + 12px);
+}
+.round-img{
+  border-radius: 50%;
+}
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 39, 186, .1);
+}
+::-webkit-scrollbar-thumb {
+  background: $primaryColor;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $accentColor;
+}
+.tabs-content{
+  overflow-y: auto;
+  max-height: 500px;
+}

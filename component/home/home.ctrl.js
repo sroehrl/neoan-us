@@ -6,10 +6,11 @@ const tabSystem = {
     init(){
         document.querySelectorAll('.tabs-menu').forEach(tabMenu => {
             Array.from(tabMenu.children).forEach((child, ind) => {
-                child.addEventListener('click', () => {
+                child.addEventListener('click', (ev) => {
+                    ev.preventDefault();
                     tabSystem.toggle(child.dataset.target);
                 });
-                if(child.className.includes('is-active')){
+                if(child.className.includes('bg-accent')){
                     tabSystem.toggle(child.dataset.target);
                 }
             });
@@ -18,7 +19,7 @@ const tabSystem = {
     toggle(targetId){
         document.querySelectorAll('.tabs-content').forEach(contentElement=>{
             contentElement.style.display = contentElement.id === targetId ? 'block' : 'none';
-            document.querySelector(`[data-target="${contentElement.id}"]`).classList[contentElement.id === targetId ? 'add' : 'remove']('is-active');
+            document.querySelector(`[data-target="${contentElement.id}"]`).classList[contentElement.id === targetId ? 'add' : 'remove']('bg-accent');
         })
     },
 };
@@ -39,4 +40,16 @@ sameHeightElements.forEach(element => {
 calcList.forEach(element => {
     element.style.height = (highest - 160) + 'px';
 })
-tabSystem.init();
+// tabSystem.init();
+
+/* GDPR consent */
+const tabsTemplate = document.getElementById('hidden-tabs');
+const tabsContainer = document.getElementById('tabs-container');
+const checker = setInterval(()=>{
+    if(localStorage.gdprAccepted){
+        clearInterval(checker);
+        tabsContainer.innerHTML = '';
+        tabsContainer.appendChild(tabsTemplate.content);
+        tabSystem.init()
+    }
+},500)

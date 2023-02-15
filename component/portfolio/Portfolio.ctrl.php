@@ -20,7 +20,7 @@ class Portfolio extends Unicore{
         $this
             ->uni('Neoan3')
             ->addHead('title', 'Open source projects')
-            ->hook('header', 'header')
+            ->hook('footer', 'header')
             ->hook('main', 'portfolio')
             ->output();
     }

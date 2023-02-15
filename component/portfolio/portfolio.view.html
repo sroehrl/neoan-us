@@ -1,25 +1,20 @@
 <section class="section main-teaser">
     <div class="container" x-data="component()">
-        <h1 class="title">Open-Source Projects</h1>
-        <div class="columns is-multiline">
+        <h1 class="font-xl text-primary p-l-3">Open-Source Projects</h1>
+        <div class="grid-6-6 md:grid-4-4-4">
             <template x-for="project in data.projects">
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-16x9">
-                                <img x-bind:src="project.img" alt="Placeholder image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-
-                            <div class="content">
-                                <h3 x-text="project.name"></h3>
-                                <p x-text="project.desc"></p>
-                                <a x-bind:href="project.link" target="_blank">visit</a>
-                                <br>
-                            </div>
+                <div class="card">
+                    <figure class="image m-0">
+                        <img class="w-100p" x-bind:src="project.img" alt="Placeholder image" />
+                    </figure>
+                    <div class="content">
+                        <h3 x-text="project.name"></h3>
+                        <p x-text="project.desc"></p>
+                        <div class="grid">
+                            <a class="button font-md place-x-center p-x-5" x-bind:href="project.link" target="_blank">visit</a>
                         </div>
                     </div>
+
                 </div>
 
             </template>
@@ -98,6 +93,11 @@
                         desc:'Exports spritesheets for game-dev',
                         img:'https://repository-images.githubusercontent.com/367681053/90d2a800-b583-11eb-8a76-97fbb5388021',
                         link:'https://github.com/sroehrl/planet-generator'
+                    },{
+                        name:'GLASS gaudiamus (S)CSS template',
+                        desc:'Playing with the modern glassmorphism design',
+                        img:'https://repository-images.githubusercontent.com/371199366/34996a80-bffe-11eb-970d-d8ba5c35cdf2',
+                        link:'https://gaudiamus-css.github.io/glass/'
                     },
                 ]
             }
